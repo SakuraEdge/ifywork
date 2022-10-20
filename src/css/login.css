@@ -1,119 +1,128 @@
+body,
+html,
+div {
+    padding: 0;
+    margin: 0;
+}
+
+#head {
+    width: 100%;
+    height: 43px;
+}
+#head ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#head ul li {
+    float: left;
+}
+#head ul li a {
+    display: block;
+    width: 139.6px;
+    color: black;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+#head ul li a:hover {
+    background-color: gray;
+}
+
+#foot {
+    width: 100%;
+    height: 42px;
+    margin-top: 10px;
+}
+#foot ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+#foot ul li {
+    float: left;
+}
+#foot ul li a {
+    display: block;
+    width: 250px;
+    color: grey;
+    background-color: white;
+    text-align: center;
+    padding: 4px;
+    text-decoration: none;
+    line-height: 30px;
+    font-size: 14px;
+}
+
 * {
-    margin: 0px;
-    padding: 0px;
+    text-decoration: none;
+}
+a {
+    color: blue;
 }
 
-body {
+input,
+button {
+    outline: none;
+}
+
+#content {
+    border: solid 2px #e0e0e0;
+    width: 25rem;
+    height: 33rem;
+    background-color: white;
+    margin-top: 50px;
+    margin-left: 50%;
+    float: left;
+    border-radius:27px;
+    box-shadow: 0 0 100px 10PX black;
+}
+
+.header a {
+    width: 50%;
+    height: 60px;
+    background-color: #f5f5f5;
+    display: inline-block;
+    float: left;
+    /*居中*/
+    text-align: center;
+    line-height: 60px;
+    color: #262626;
+    border-radius:27px;
+}
+
+.header a.current {
+    background-color: transparent;
+}
+
+#body {
+    margin: 2rem;
+}
+
+.dom {
     width: 100%;
-    height: 100%;
-}
-
-.login-page {
-    height: 100%; /*calc(100vh);*/
-    width: 100%;
-    /*min-width: 1000px;*/
-    min-height: 450px;
-    background: url('../assets/picture/login/bg.png') repeat-x;
-    background-size: 100% 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.reg_login .login-page {
-    background: url('../assets/picture/login/bg.png') repeat-x;
-    background-size: 100% 100%;
-}
-
-.logo-warp {
-    padding-top: 30px;
-    padding-left: 50px;
-    height: 90px;
-    position: absolute;
-}
-
-.logo {
-    width: 100px;
-}
-
-.content-warp {
-    height: calc(100vh);
-    width: 100%;
-    opacity: 90%;
-    position: relative;
-}
-
-
-.login-warp {
-    width: 380px;
-    position: absolute;
-    top: 50%;
-    margin-top: -200px;
-    right: 220px;
-}
-
-.account-login {
     display: none;
 }
 
-.account-login, .qrcode-login {
-    height: 390px;
-    background: rgba(255,255,255,1);
-    box-shadow: 1px 6px 9px 0px rgba(0,36,171,0.2);
-    border-radius: 10px;
-}
-
-.shade {
-    width: 0;
-    height: 0;
-    border-width: 60px 0 0 60px;
-    border-style: solid;
-    border-color: transparent transparent transparent #fff;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-
-.login-form, .qrcode-form {
-    padding: 0px 35px;
-}
-
-.title {
-    color: #343434;
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.login-form__item {
-    position: relative;
-    margin-bottom: 10px;
-    min-height: 20px;
-}
-
-.login-form__item .input {
+.input {
     border: 1px solid #D7E1F1;
     width: 255px;
     height: 40px;
     border-radius: 4px;
     line-height: 40px;
     margin: 10px 0 0 0;
-    padding-left: 45px;
+    padding-left: 50px;
 }
 
-.input-img {
-    position: absolute;
-    left: 15px;
-    top: 22px;
+.s1 {
+    margin-bottom: 1rem;
 }
 
-.login-form__item .code-input {
-    padding-right: 100px;
-    width: 155px;
-}
-
-.login-btn {
+.button {
     display: inline-block;
     width: 302px;
     height: 40px;
@@ -125,35 +134,46 @@ body {
     text-decoration: none;
     background: linear-gradient(90deg,rgba(87,93,246,1),rgba(0,177,251,1));
     box-shadow: 1px 6px 13px 0px rgba(0,140,255,0.29);
-    border-radius: 27px;
+    border-radius:27px;
+    float: contour;
 }
 
-.login-btn:focus {
-    outline: 0px;
+.s2 {
+    text-align: center;
 }
 
-.login-btn.noclick {
-    background: #c8c8c8;
+#s3 {
+    margin-top: 1rem;
 }
 
-.btn-a {
-    font-size: 12px;
-    color: #84939C;
-    text-decoration: none;
+#input1 {
+    width: 60%;
+    height: 2rem;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
 }
 
-.btn-a:hover {
-    color: #2C5BE8
-}
-
-.right {
-    float: right;
-}
-
-.login-form__item label {
-    font-size: 14px;
-    color: #84939C;
-    vertical-align: 2px;
+#button1 {
+    width: 35%;
+    height: 2rem;
+    margin-top: 0.5rem;
+    padding-left: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #cccccc;
     cursor: pointer;
-    margin-left: 3px;
 }
+
+.bk{
+    height: 100%; /*calc(100vh);*/
+    width: 100%;
+    /*min-width: 1000px;*/
+    min-height: 750px;
+    background: url('../assets/picture/background.png') repeat-x;
+    background-size: 100% 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+
