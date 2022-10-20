@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset=UTF-8">
+    <title>程序员之家</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+<div id="head">
+    <ul>
+        <li><a>首页</a></li>
+        <li><a>论坛</a></li>
+        <li><a>问答</a></li>
+        <li><a href="https://www.csdn.net/" target="blank">CSDN</a></li>
+        <li><a>登录/注册</a></li>
+    </ul>
+</div>
+<div
+        style="background-image: url(../assets/picture/backgroud.png); background-size:100% 100%;margin-left: auto;margin-right: auto;width: 100%;height: 635px;">
+    <section id="content">
+        <div class="header">
+            <a href="javascript:;" class="current">我要登录</a>
+            <a href="javascript:;">我要注册</a>
+        </div>
+        <div id=body>
+            <div class="dom" style="display: block;">
+                <form>
+                    <div class="s1">
+                        <h>账号</h>
+                        <input class="input" type="text" placeholder="手机/邮箱/用户名">
+                    </div>
+                    <div class="s1">
+                        <h>密码</h>
+                        <input class="input" type="password" placeholder="密码">
+                    </div>
+                    <div class="s1">
+                        <input type="checkbox">
+                        <span>记住密码</span>
+                    </div>
+                    <input class="button" type="submit" value="登&nbsp;录">
+                </form>
+                <div class="s1">
+                    <a href="#">找回密码</a>
+                    <span>|</span>
+                    <span>还没有注册帐号?</span>
+                    <a href="#">立即注册</a>
+                </div>
+                <div class="s2">
+                    <span>使用第三方账号直接登录</span>
+                    <div class="s3">
+                        <a href="#">
+                            <img src="images/qq.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="images/wechat.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="dom">
+                <form>
+                    <div class="s1">
+                        <h>手机号码</h>
+                        <input class="input" type="text" placeholder="填写你的手机号码作为登录账户">
+                    </div>
+                    <div class="s1">
+                        <h>用户名</h>
+                        <input class="input" type="password" placeholder="中、英文均可, 最长20个字符或10个汉字">
+                    </div>
+                    <div class="s1">
+                        <h>密码</h>
+                        <input class="input" type="text" placeholder="6-30位英文、数字、符号, 区分大小写">
+                    </div>
+                    <div class="s1">
+                        <h>短信验证码</h><br>
+                        <input id="input1" type="text" placeholder="填写短信验证码">
+                        <input id="button1" type="button" value="获取短信验证码">
+                    </div>
+                    <input class="button" type="submit" value="注&nbsp;册">
+                </form>
+                <div class="s2">
+                    <span>使用第三方账号直接登录</span>
+                    <div class="s3">
+                        <a href="#">
+                            <img src="images/qq.png" alt="">
+                        </a>
+                        <a href="#">
+                            <img src="images/wechat.png" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.onload = function () {
+            // 1.1 获取需要的标签
+            let as = document.getElementsByClassName('header')[0].getElementsByTagName('a');
+            let contents = document.getElementsByClassName('dom');
+
+            // 1.2 遍历
+            for (let i = 0; i < as.length; i++) {
+                // 1.2.1 取出单个对象
+                let a = as[i];
+                a.id = i;
+
+                // 1.2.2 监听鼠标的移动事件
+                a.onclick = function () {
+                    // 让所有的a的class都清除
+                    for (let j = 0; j < as.length; j++) {
+                        as[j].className = '';
+                        contents[j].style.display = 'none';
+                    }
+
+                    // 设置当前a的class
+                    this.className = 'current';
+                    // 从contents数组中取出对应的标签
+                    contents[this.id].style.display = 'block';
+                }
+
+            }
+        }
+    </script>
+</div>
+<div id="foot">
+    <ul>
+        <li><a href="http://aiit.iflysse.com/">i博思</a></li>
+    </ul>
+</div>
+<div align="center" style="color: grey; font-size:12px;">
+    Copyright © 2008-2020. All Rights Reserved
+</div>
+</body>
+
+</html>
