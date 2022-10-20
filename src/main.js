@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import Vue from 'vue'
 import router from 'vue-router'
+import '@/css/login.css'
 
 createApp(App).mount('#app')
 
