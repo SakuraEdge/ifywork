@@ -8,6 +8,7 @@
       <div id=body>
         <div class="dom" style="display: block;">
           <form>
+            <br><br><br><br>
             <div class="s1">
               <h>账号</h>
               <input class="input" type="text" placeholder="手机/邮箱/用户名">
@@ -20,10 +21,10 @@
               <input type="checkbox">
               <span>记住密码</span>
             </div>
+            <br><br><br><br><br>
             <span>&ensp;&ensp;</span>
-            <input class="button" type="submit" value="登&nbsp;录">
+            <input class="button" id="login" type="submit" value="登&nbsp;录">
           </form>
-          <br><br><br><br><br><br>
           <div class="s1">
             <span>&ensp;&ensp;&ensp;&ensp;</span>
             <a href="#">找回密码</a>
@@ -34,6 +35,7 @@
         </div>
         <div class="dom">
           <form>
+            <br><br><br><br>
             <div class="s1">
               <h>手机号码</h>
               <input class="input" type="text" placeholder="填写你的手机号码作为登录账户">
@@ -46,7 +48,8 @@
               <h>密码</h>
               <input class="input" type="text" placeholder="6-30位英文、数字、符号, 区分大小写">
             </div>
-            <span>&ensp;</span>
+            <br><br><br>
+            <span>&ensp;&ensp;</span>
             <input class="button" type="submit" value="注&nbsp;册">
           </form>
         </div>
@@ -56,6 +59,7 @@
 </template>
 
 <script>
+import $ from 'jquery';
 window.onload = function () {
   // 1.1 获取需要的标签
   let as = document.getElementsByClassName('header')[0].getElementsByTagName('a');
@@ -82,6 +86,9 @@ window.onload = function () {
     }
 
   }
+
+  //绑定登录按钮事情
+
 }
 </script>
 
