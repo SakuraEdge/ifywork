@@ -46,8 +46,8 @@ export default {
         method: 'POST',    //提交方法
         url: '/api/MyServlet',    //后端的servlet登录接口
         data: {
-          userName: document.getElementById("lo-account").value,    //传输的用户名
-          password: document.getElementById("lo-psw").value,    //传输的密码
+          userName: 3519,    //传输的用户名
+          password: 123456,    //传输的密码
         },
       }).then(res => {
         console.log(res);     //对后端servlet接口返回的数据进行输出

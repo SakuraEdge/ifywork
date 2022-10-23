@@ -11,20 +11,7 @@ module.exports = defineConfig({
         pathRewrite:{         //重写路径
          '^/api':''
       }
-    }
-  }
+}
+}
 }
 })
-
-const webpack = require('webpack')
-
-module.exports = {
-  chainWebpack: config => {
-    config.plugin('provide').use(webpack.ProvidePlugin, [{
-      $: 'jquery',
-      jquery: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    }])
-  }
-}
