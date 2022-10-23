@@ -1,95 +1,62 @@
+
 <template>
-  <div class="bk">
-    <section id="content">
-      <div class="header">
-        <a href="javascript:;" class="current">我要登录</a>
-        <a href="javascript:;">我要注册</a>
-      </div>
-      <div id=body>
-        <div class="dom" style="display: block;">
-          <form>
-            <br><br><br><br>
-            <div class="s1">
-              <h>账号</h>
-              <input class="input" type="text" placeholder="手机/邮箱/用户名">
-            </div>
-            <div class="s1">
-              <h>密码</h>
-              <input class="input" type="password" placeholder="密码">
-            </div>
-            <div class="s1">
-              <input type="checkbox">
-              <span>记住密码</span>
-            </div>
-            <br><br><br><br><br>
-            <span>&ensp;&ensp;</span>
-            <input class="button" id="login" type="submit" value="登&nbsp;录">
-          </form>
-          <div class="s1">
-            <span>&ensp;&ensp;&ensp;&ensp;</span>
-            <a href="#">找回密码</a>
-            <span>|</span>
-            <span>还没有注册帐号?</span>
-            <a href="#">立即注册</a>
+  <body class="reg_login">
+  <div class="login-page">
+    <div class="logo-warp">
+      <img src="../assets/picture/login/logo.png" class="logo">
+    </div>
+    <div class="content-warp" >
+      <div class="login-warp">
+        <div class="account-login" style="display: block;">
+          <br/><br/>
+          <div class="login-form">
+            <form>
+              <p class="title">用户登录</p>
+              <div class="login-form__item">
+                <img src="../assets/picture/login/user.png" class="input-img">
+                <input placeholder="用户名" id="lo-account" class="input" tabindex="1">
+              </div>
+              <div class="login-form__item">
+                <img src="../assets/picture/login/password.png" class="input-img">
+                <input placeholder="请输入密码" id="lo-psw" class="input" tabindex="2" type="password">
+              </div>
+              <div>
+                <br/><br/><br/><br/>
+              </div>
+              <div class="login-form__item ">
+                <input type="button" v-on:click="msgpost" class="login-btn" tabindex="5" id="login" value="登 录">
+              </div>
+            </form>
           </div>
         </div>
-        <div class="dom">
-          <form>
-            <br><br><br><br>
-            <div class="s1">
-              <h>手机号码</h>
-              <input class="input" type="text" placeholder="填写你的手机号码作为登录账户">
-            </div>
-            <div class="s1">
-              <h>用户名</h>
-              <input class="input" type="password" placeholder="中、英文均可, 最长20个字符或10个汉字">
-            </div>
-            <div class="s1">
-              <h>密码</h>
-              <input class="input" type="text" placeholder="6-30位英文、数字、符号, 区分大小写">
-            </div>
-            <br><br><br>
-            <span>&ensp;&ensp;</span>
-            <input class="button" type="submit" value="注&nbsp;册">
-          </form>
-        </div>
       </div>
-    </section>
     </div>
+  </div>
+  </body>
 </template>
 
 <script>
-import $ from 'jquery';
-window.onload = function () {
-  // 1.1 获取需要的标签
-  let as = document.getElementsByClassName('header')[0].getElementsByTagName('a');
-  let contents = document.getElementsByClassName('dom');
+import axios from "axios"
 
-  // 1.2 遍历
-  for (let i = 0; i < as.length; i++) {
-    // 1.2.1 取出单个对象
-    let a = as[i];
-    a.id = i;
-
-    // 1.2.2 监听鼠标的移动事件
-    a.onclick = function () {
-      // 让所有的a的class都清除
-      for (let j = 0; j < as.length; j++) {
-        as[j].className = '';
-        contents[j].style.display = 'none';
-      }
-
-      // 设置当前a的class
-      this.className = 'current';
-      // 从contents数组中取出对应的标签
-      contents[this.id].style.display = 'block';
+export default {
+  name: 'HelloWorld',
+  methods:{
+    msgpost() {
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/MyServlet',    //后端的servlet登录接口
+        data: {
+          userName: document.getElementById("lo-account").value,    //传输的用户名
+          password: document.getElementById("lo-psw").value,    //传输的密码
+        },
+      }).then(res => {
+        console.log(res);     //对后端servlet接口返回的数据进行输出
+      })
     }
-
   }
-
-  //绑定登录按钮事情
-
 }
+
+
 </script>
 
 <style>
