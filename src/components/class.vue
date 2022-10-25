@@ -19,8 +19,7 @@
         <div class="header-op">
           <div class="header-op-list">
             <div class="drop">
-              <div class="header-op-list-btn header-op-history"><i
-                  class="icon icon-history-o"></i><span><p id="TeacherName" style="color: #36ad6a">
+              <div class="header-op-list-btn header-op-history"><span><p id="TeacherName" style="color: #36ad6a">
                     未登录
                 </p>
                 </span></div>
@@ -84,11 +83,11 @@
         <div>
           <div role="none" class="n-space" data-v-95e7e64a=""
                style="display: flex; flex-flow: row wrap; justify-content: flex-end; gap: 8px 12px;">
-          <div role="none" style="max-width: 100%;"><button
-              class="n-button n-button--primary-type n-button--medium-type n-button--ghost"
-              tabindex="0" type="button"
-              style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-bezier-ease-out:cubic-bezier(0, 0, 0.2, 1); --n-ripple-duration:0.6s; --n-opacity-disabled:0.5; --n-wave-opacity:0.6; font-weight: 400; --n-color:#0000; --n-color-hover:#0000; --n-color-pressed:#0000; --n-color-focus:#0000; --n-color-disabled:#0000; --n-ripple-color:#18a058; --n-text-color:#18a058; --n-text-color-hover:#36ad6a; --n-text-color-pressed:#0c7a43; --n-text-color-focus:#36ad6a; --n-text-color-disabled:#18a058; --n-border:1px solid #18a058; --n-border-hover:1px solid #36ad6a; --n-border-pressed:1px solid #0c7a43; --n-border-focus:1px solid #36ad6a; --n-border-disabled:1px solid #18a058; --n-width: initial; --n-height:34px; --n-font-size:14px; --n-padding:0 14px; --n-icon-size:18px; --n-icon-margin:6px; --n-border-radius:3px;">
-            <!----><span class="n-button__icon">
+            <div role="none" style="max-width: 100%;"><button @click="dialogShow"
+                                                              class="n-button n-button--primary-type n-button--medium-type n-button--ghost"
+                                                              tabindex="0" type="button"
+                                                              style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-bezier-ease-out:cubic-bezier(0, 0, 0.2, 1); --n-ripple-duration:0.6s; --n-opacity-disabled:0.5; --n-wave-opacity:0.6; font-weight: 400; --n-color:#0000; --n-color-hover:#0000; --n-color-pressed:#0000; --n-color-focus:#0000; --n-color-disabled:#0000; --n-ripple-color:#18a058; --n-text-color:#18a058; --n-text-color-hover:#36ad6a; --n-text-color-pressed:#0c7a43; --n-text-color-focus:#36ad6a; --n-text-color-disabled:#18a058; --n-border:1px solid #18a058; --n-border-hover:1px solid #36ad6a; --n-border-pressed:1px solid #0c7a43; --n-border-focus:1px solid #36ad6a; --n-border-disabled:1px solid #18a058; --n-width: initial; --n-height:34px; --n-font-size:14px; --n-padding:0 14px; --n-icon-size:18px; --n-icon-margin:6px; --n-border-radius:3px;">
+              <!----><span class="n-button__icon">
                                       <div class="n-icon-slot" role="none"><i role="img" class="n-icon"
                                                                               data-v-95e7e64a="" style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1);"><svg
                                           xmlns="http://www.w3.org/2000/svg"
@@ -99,51 +98,60 @@
                                                 fill="currentColor"></path>
                                           </svg></i></div>
                                     </span><span class="n-button__content"> 创建班级 </span>
-          </button>
+            </button>
+            </div>
           </div>
-        </div>
-        <div class="module">
-          <div class="module-heading"><i class="icon-hot" style="color:#FF0000"></i>
-            <h2 class="module-title">我的班级</h2>
-          </div>
-          <div class="module-main scroll-box">
-            <div class="module-items module-poster-items-small scroll-content"><a
-                href="" title=""
-                class="module-poster-item module-item">
-              <div class="module-item-cover">
-                <div class="module-item-note">测试2</div>
-                <div class="module-item-pic"><img class="lazy lazyload"
-                                                  alt="" referrerpolicy="no-referrer" src=""></div>
-              </div>
-              <div class="module-poster-item-info">
-                <div class="module-poster-item-title">软件2001</div>
-              </div>
-            </a><a href="" title=""
-                   class="module-poster-item module-item">
-              <div class="module-item-cover">
-                <div class="module-item-note">测试2</div>
-                <div class="module-item-pic"><img class="lazy lazyload"
-                                                  alt="" referrerpolicy="no-referrer" src=""></div>
-              </div>
-              <div class="module-poster-item-info">
-                <div class="module-poster-item-title">软件2002</div>
-              </div>
-            </a><a href="" title=""
-                   class="module-poster-item module-item">
-              <div class="module-item-cover">
-              </div>
-              <div class="module-poster-item-info">
-              </div>
-            </a><a href="" title=""
-                   class="module-poster-item module-item">
-              <div class="module-item-cover">
-              </div>
-            </a></div>
+          <div class="module">
+            <div class="module-heading"><i class="icon-hot" style="color:#FF0000"></i>
+              <h2 class="module-title">我的班级</h2>
+            </div>
+            <div class="module-main scroll-box">
+              <div class="module-items module-poster-items-small scroll-content">
+                <a v-for="i in dataList" v-bind:key="i"
+                  href="" title=""
+                  class="module-poster-item module-item">
+                <div class="module-item-cover">
+                  <div class="module-item-note">{{i}}</div>
+                  <div class="module-item-pic"><img class="lazy lazyload"
+                                                    alt="" referrerpolicy="no-referrer" src="../static/picture/backgroud.png"></div>
+                </div>
+                <div class="module-poster-item-info">
+                  <div class="module-poster-item-title">{{i}}</div>
+                </div>
+              </a>
+
+
+                <a href="" title=""
+                     class="module-poster-item module-item">
+                <div class="module-item-cover">
+                </div>
+                <div class="module-poster-item-info">
+                </div>
+              </a><a href="" title=""
+                     class="module-poster-item module-item">
+                <div class="module-item-cover">
+                </div>
+              </a></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div id="dialog" class="dialog" style="text-align: center;display: none;position: absolute;left: 50%;top: 50%;transform: translate(-50%,-50%);/">
+    <img @click="dialogNone" style="float: right;width: 30px;height: 30px" src="../static/picture/close.png">
+    <h2><img src="" alt="" class="close" />创建班级</h2>
+    <form id="loginForm" >
+      <div class="info"></div>
+      <div class="pass">班级名称：<input type="text" id="classname" class="text" /></div>
+      <br>
+      <div class="pass">最大人数：<input type="text" id="maxnum" class="text" /></div>
+      <br>
+      <div class="pass">班级地址：<input type="text" id="address" class="text" /></div>
+      <br>
+      <div class="button"><button v-on:click="createClass" class="submit" value="">创建</button>
+      </div>
+    </form>
   </div>
   </body>
 
@@ -153,11 +161,74 @@
 import '@/css/style.css'
 import '@/css/swiper-bundle.min.css'
 import '@/css/person.css'
+import '@/css/dialog.css'
+import axios from 'axios'
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "class",
+  data() {
+    return {
+      dataList:[],//初始化dataList并清空
+      name:null,
+    };
+  },
+
+  created() {
+    const that = this;
+
+    axios({
+      method: 'POST',    //提交方法
+      url: '/api/IsLoginServlet',    //后端的servlet登录接口
+      data: {
+      },
+    }).then(res => {
+      document.getElementById("TeacherName").innerText = res.data;
+      that.name = res.data;
+    })
+
+    setTimeout(()=>{
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/SelectClassServlet',    //后端的servlet登录接口
+        data: {
+          teacherID: that.name
+        },
+      }).then(res => {
+        //对后端servlet接口返回的数据进行输出
+        that.dataList = res.data.split(",");
+      })},50);
+  },
+
+  methods:{
+    dialogShow:function (){
+      document.getElementById("dialog").style.display="block";
+    },
+    dialogNone:function (){
+      document.getElementById("dialog").style.display="none";
+    },
+
+
+
+
+    createClass() {
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/CreateServlet',    //后端的servlet登录接口
+        data: {
+          name: document.getElementById("classname").value,
+          num: document.getElementById("maxnum").value,
+          address: document.getElementById("address").value,
+        },
+      }).then(res => {
+        alert(res.data);     //对后端servlet接口返回的数据进行输出
+        this.dialogNone();
+        location. reload();
+      })
+    },
+  }
 }
+
 </script>
 
 <style scoped>

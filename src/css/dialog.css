@@ -1,0 +1,49 @@
+#dialog {
+    width: 350px;
+    height:250px;
+    position:absolute;
+    display:block;
+    z-index:9999;
+    border: solid 2px #e0e0e0;
+    background-color: white;
+    border-radius:27px;
+    box-shadow: 0 0 20px 1PX black;
+}
+#dialog h2 {
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    font-size:14px;
+    letter-spacing:1px;
+    color:#666;
+    margin:0;
+    padding:0;
+    border-bottom:1px solid #ccc;
+    cursor:move;
+}
+#dialog div.info {
+    padding:10px 0 5px 0;
+    text-align:center;
+    color:maroon;
+}
+#dialog div.user, #login div.pass {
+    font-size:14px;
+    color:#666;
+    padding:5px 0;
+    text-align:center;
+}
+#dialog input.text {
+    width: 200px;
+    height:25px;
+    border:1px solid #ccc;
+    background:#fff;
+    font-size:14px;
+}
+#dialog .button {
+    text-align:center;
+}
+#dialog .other {
+    text-align: right;
+    padding: 15px 10px;
+    color: #666;
+}
