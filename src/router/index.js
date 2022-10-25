@@ -35,6 +35,11 @@ const routes=[
         path:'/person',
         name:'person',
         component:()=>import('../components/person.vue')
+    },
+    {
+        path:'/classDone',
+        name:'classDone',
+        component:()=>import('../components/classDone.vue')
     }
 ]
 const router = createRouter({

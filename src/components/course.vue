@@ -79,69 +79,82 @@
     </div>
     <div class="main">
       <div class="content">
-        <div data-v-357a65ed="" class="fav_list_box">
-          <div  class="fav_list_title">
-            <h3 class="fav_list_title_h3">课程</h3>
-            <div class="fav_num">
-              共<span >5</span>条
+        <div>
+          <div role="none" class="n-space" data-v-95e7e64a=""
+               style="display: flex; flex-flow: row wrap; justify-content: flex-end; gap: 8px 12px;">
+            <div role="none" style="max-width: 100%;"><button @click="dialogShow"
+                                                              class="n-button n-button--primary-type n-button--medium-type n-button--ghost"
+                                                              tabindex="0" type="button"
+                                                              style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-bezier-ease-out:cubic-bezier(0, 0, 0.2, 1); --n-ripple-duration:0.6s; --n-opacity-disabled:0.5; --n-wave-opacity:0.6; font-weight: 400; --n-color:#0000; --n-color-hover:#0000; --n-color-pressed:#0000; --n-color-focus:#0000; --n-color-disabled:#0000; --n-ripple-color:#18a058; --n-text-color:#18a058; --n-text-color-hover:#36ad6a; --n-text-color-pressed:#0c7a43; --n-text-color-focus:#36ad6a; --n-text-color-disabled:#18a058; --n-border:1px solid #18a058; --n-border-hover:1px solid #36ad6a; --n-border-pressed:1px solid #0c7a43; --n-border-focus:1px solid #36ad6a; --n-border-disabled:1px solid #18a058; --n-width: initial; --n-height:34px; --n-font-size:14px; --n-padding:0 14px; --n-icon-size:18px; --n-icon-margin:6px; --n-border-radius:3px;">
+              <!----><span class="n-button__icon">
+                                      <div class="n-icon-slot" role="none"><i role="img" class="n-icon"
+                                                                              data-v-95e7e64a="" style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1);"><svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"
+                                          data-v-95e7e64a="">
+                                            <path
+                                                d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67l-.5-.68C10.96 2.54 10.05 2 9 2C7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83L8.62 12L11 8.76l1-1.36l1 1.36L15.38 12L17 10.83L14.92 8H20v6z"
+                                                fill="currentColor"></path>
+                                          </svg></i></div>
+                                    </span><span class="n-button__content"> 添加课程 </span>
+            </button>
             </div>
           </div>
-          <div  class="my_fav_con">
-            <div>
-              <ul  class="my_fav_list">
-                <li class="my_fav_list_li">
-                  <a  class="my_fav_list_a" href="" target="_blank">
-                    （电脑故障）2.电脑突然就找不到网络，上不了网 - qq_38959715的博客
-                  </a>
-                  <label class="my_fav_list_label">
-                    <span >2019-04-08</span>
-                    <a  class="cancel_fav"><em>取消</em></a>
-                  </label>
-                </li>
-                <li class="my_fav_list_li" id="">
-                  <a  class="my_fav_list_a" href="" target="_blank">
-                    （电脑故障）2.电脑突然就找不到网络，上不了网 - qq_38959715的博客
-                  </a>
-                  <label class="my_fav_list_label">
-                    <span >2019-04-08</span>
-                    <a  class="cancel_fav"><em>取消</em></a>
-                  </label>
-                </li>
-                <li class="my_fav_list_li" id="">
-                  <a  class="my_fav_list_a" href="" target="_blank">
-                    （电脑故障）2.电脑突然就找不到网络，上不了网 - qq_38959715的博客
-                  </a>
-                  <label class="my_fav_list_label">
-                    <span >2019-04-08</span>
-                    <a  class="cancel_fav"><em>取消</em></a>
-                  </label>
-                </li>
-                <li class="my_fav_list_li" id="">
-                  <a  class="my_fav_list_a" href="" target="_blank">
-                    （电脑故障）2.电脑突然就找不到网络，上不了网 - qq_38959715的博客
-                  </a>
-                  <label class="my_fav_list_label">
-                    <span >2019-04-08</span>
-                    <a  class="cancel_fav"><em>取消</em></a>
-                  </label>
-                </li>
-                <li class="my_fav_list_li" id="">
-                  <a  class="my_fav_list_a" href="" target="_blank">
-                    （电脑故障）2.电脑突然就找不到网络，上不了网 - qq_38959715的博客
-                  </a>
-                  <label class="my_fav_list_label">
-                    <span >2019-04-08</span>
-                    <a  class="cancel_fav"><em>取消</em></a>
-                  </label>
-                </li>
 
-              </ul> <!---->
+          <div data-v-357a65ed="" class="fav_list_box">
+            <div  class="fav_list_title">
+              <h3 class="fav_list_title_h3">课程</h3>
+              <div class="fav_num">
+                共<span >5</span>条
+              </div>
+            </div>
+            <div  class="my_fav_con">
+              <div>
+                <ul  class="my_fav_list">
+                  <li class="my_fav_list_li">
+                    <a  class="my_fav_list_a" href="#" style="color:black;">
+                      <strong>名称</strong>  <span style="margin-left: 300px"><strong>标签</strong></span>
+                    </a>
+
+                    <label class="my_fav_list_label">
+                      <span  class="my_fav_list_a" style="float: left;color: black"><strong>操作</strong></span>
+                    </label>
+                  </li>
+
+
+                  <li class="my_fav_list_li">
+                    <p  class="my_fav_list_a" >
+                      Java  <span style="margin-left: 300px">Java</span>
+                    </p>
+
+                    <label class="my_fav_list_label">
+                      <a  class="cancel_fav" style="float: left">修改<em></em></a>
+                    </label>
+                  </li>
+
+
+                </ul> <!---->
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        <div id="dialog" class="dialog" style="text-align: center;display: none;position: absolute;left: 50%;top: 50%;
+        transform: translate(-50%,-50%);height: 200px">
+          <img @click="dialogNone" style="float: right;width: 30px;height: 30px" src="../static/picture/close.png">
+          <h2><img src="" alt="" class="close" />添加课程</h2>
+          <form id="loginForm" >
+            <div class="info"></div>
+            <div class="pass">课程名称：<input type="text" class="text"/></div>
+            <br>
+            <div class="pass">课程标签：<input type="text" class="text"/></div>
+            <br>
+            <div class="button"><button class="submit" value="">添加课程</button>
+            </div>
+          </form>
         </div>
       </div>
+    </div>
+  </div>
   </body>
 
 </template>
@@ -150,6 +163,8 @@
 import '@/css/style.css'
 import '@/css/swiper-bundle.min.css'
 import '@/css/list.css'
+import '@/css/person.css'
+import '@/css/dialog.css'
 import axios from 'axios'
 
 axios({
@@ -164,6 +179,23 @@ axios({
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "course",
+  data() {
+    return {
+      name: null,
+    };
+  },
+  created() {
+    const that = this;
+  },
+  methods: {
+    dialogShow: function () {
+      document.getElementById("dialog").style.display = "block";
+    },
+    dialogNone: function () {
+      document.getElementById("dialog").style.display = "none";
+    },
+
+  }
 }
 </script>
 

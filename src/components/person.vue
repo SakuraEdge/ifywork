@@ -109,7 +109,7 @@
                                     data-image-src="https://gravatar.globalslb.net/avatar/7a16b91f8f5ada279b7095530ebc571d">
                                   <!---->
                                       </span></div>
-                                <div class="n-page-header__title">lumada</div>
+                                <div class="n-page-header__title">{{personName}}</div>
                                 <div class="n-page-header__subtitle">普通用户 · <span data-v-95e7e64a="">长期有效</span>
                                 </div>
                               </div>
@@ -131,9 +131,9 @@
                                 <div data-v-95e7e64a="" style="grid-column: span 1 / span 1;">
                                   <div class="n-statistic" data-v-95e7e64a=""
                                        style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-label-font-size:14px; --n-label-font-weight:400; --n-label-text-color:rgb(118, 124, 130); --n-value-font-weight:400; --n-value-font-size:24px; --n-value-prefix-text-color:rgb(51, 54, 57); --n-value-suffix-text-color:rgb(51, 54, 57); --n-value-text-color:rgb(51, 54, 57);">
-                                    <div class="n-statistic__label">隧道</div>
+                                    <div class="n-statistic__label">成就</div>
                                     <div class="n-statistic-value">
-                                      <!----><span class="n-statistic-value__content">1 / 2</span>
+                                      <!----><span class="n-statistic-value__content">19 / 20</span>
                                       <!---->
                                     </div>
                                   </div>
@@ -141,11 +141,11 @@
                                 <div data-v-95e7e64a="" style="grid-column: span 1 / span 1;">
                                   <div class="n-statistic" data-v-95e7e64a=""
                                        style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-label-font-size:14px; --n-label-font-weight:400; --n-label-text-color:rgb(118, 124, 130); --n-value-font-weight:400; --n-value-font-size:24px; --n-value-prefix-text-color:rgb(51, 54, 57); --n-value-suffix-text-color:rgb(51, 54, 57); --n-value-text-color:rgb(51, 54, 57);">
-                                    <div class="n-statistic__label">剩余流量</div>
+                                    <div class="n-statistic__label">权限</div>
                                     <div class="n-statistic-value">
                                       <!----><span class="n-statistic-value__content">
                                             <!---->
-                                            <div data-v-95e7e64a="">14 GiB</div>
+                                            <div data-v-95e7e64a="">普通</div>
                                       <!---->
                                           </span>
                                       <!---->
@@ -261,7 +261,7 @@
                            style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-border-radius:3px; --n-color:#fff; --n-color-modal:#fff; --n-color-popover:#fff; --n-color-embedded:rgb(250, 250, 252); --n-color-embedded-modal:rgb(250, 250, 252); --n-color-embedded-popover:rgb(250, 250, 252); --n-color-target:#18a058; --n-text-color:rgb(51, 54, 57); --n-line-height:1.6; --n-action-color:rgb(250, 250, 252); --n-title-text-color:rgb(31, 34, 37); --n-title-font-weight:500; --n-close-icon-color:rgba(102, 102, 102, 1); --n-close-icon-color-hover:rgba(102, 102, 102, 1); --n-close-icon-color-pressed:rgba(102, 102, 102, 1); --n-close-color-hover:rgba(0, 0, 0, 0.09); --n-close-color-pressed:rgba(0, 0, 0, 0.13); --n-border-color:rgb(239, 239, 245); --n-box-shadow:0 1px 2px -2px rgba(0, 0, 0, 0.08), 0 3px 6px 0 rgba(0, 0, 0, 0.06), 0 5px 12px 4px rgba(0, 0, 0, 0.04); --n-padding-top:19px; --n-padding-bottom:20px; --n-padding-left:24px; --n-font-size:14px; --n-title-font-size:18px; --n-close-size:22px; --n-close-icon-size:18px; --n-close-border-radius:3px;">
                         <!---->
                         <div class="n-card-header">
-                          <div class="n-card-header__main" role="heading">流量包</div>
+                          <div class="n-card-header__main" role="heading">历史签到</div>
 
                           <!---->
                         </div>
@@ -272,16 +272,15 @@
                             <thead>
                             <tr>
                               <th>类型</th>
-                              <th>剩余流量</th>
-                              <th>开始时间</th>
-                              <th>结束时间</th>
+                              <th>签到分数</th>
+                              <th>签到时间</th>
                             </tr>
                             </thead>
                             <tbody>
                             <tr>
                               <td>
                                 <!---->
-                                <div style="display: flex; align-items: center;"><span>月基础流量 (结转)</span> &nbsp;
+                                <div style="display: flex; align-items: center;"><span>今天也是好心情</span> &nbsp;
                                   <!---->
                                 </div>
                                 <!---->
@@ -289,7 +288,7 @@
                               <td style="width: 99%; padding-top: 7px;">
                                 <!---->
                                 <div>
-                                  <div style="font-size: 12px; margin-bottom: 2px;">9 GiB / 5 GiB</div>
+                                  <div style="font-size: 12px; margin-bottom: 2px;">100分</div>
                                   <div class="n-progress n-progress--line n-progress--info" aria-valuemax="100"
                                        aria-valuemin="0" aria-valuenow="179.6" role="progressbar"
                                        style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-fill-color:#2080f0; --n-font-size:14px; --n-font-size-circle:28px; --n-font-weight-circle:400; --n-icon-color:#2080f0; --n-icon-size-circle:36px; --n-icon-size-line:18px; --n-line-bg-processing:linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.5) 100%); --n-rail-color:rgba(235, 235, 235, 1); --n-rail-height:8px; --n-text-color-circle:rgb(51, 54, 57); --n-text-color-line-inner:rgb(255, 255, 255); --n-text-color-line-outer:rgb(51, 54, 57); flex: 1 1 0%;">
@@ -299,7 +298,7 @@
                                             class="n-progress-graph-line n-progress-graph-line--indicator-inside">
                                           <div class="n-progress-graph-line-rail">
                                             <div class="n-progress-graph-line-fill" style="max-width: 179.6%;">
-                                              <div class="n-progress-graph-line-indicator">179.6%</div>
+                                              <div class="n-progress-graph-line-indicator">100%</div>
                                             </div>
                                           </div>
                                         </div>
@@ -314,15 +313,11 @@
                                 <!----><span>2022-10-01</span>
                                 <!---->
                               </td>
-                              <td>
-                                <!----><span>2022-10-31</span>
-                                <!---->
-                              </td>
                             </tr>
                             <tr>
                               <td>
                                 <!---->
-                                <div style="display: flex; align-items: center;"><span>月基础流量</span> &nbsp;
+                                <div style="display: flex; align-items: center;"><span>疯狂星期四</span> &nbsp;
                                   <!---->
                                 </div>
                                 <!---->
@@ -330,7 +325,7 @@
                               <td style="width: 99%; padding-top: 7px;">
                                 <!---->
                                 <div>
-                                  <div style="font-size: 12px; margin-bottom: 2px;">5 GiB / 5 GiB</div>
+                                  <div style="font-size: 12px; margin-bottom: 2px;">100分</div>
                                   <div class="n-progress n-progress--line n-progress--info" aria-valuemax="100"
                                        aria-valuemin="0" aria-valuenow="100" role="progressbar"
                                        style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-fill-color:#2080f0; --n-font-size:14px; --n-font-size-circle:28px; --n-font-weight-circle:400; --n-icon-color:#2080f0; --n-icon-size-circle:36px; --n-icon-size-line:18px; --n-line-bg-processing:linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.5) 100%); --n-rail-color:rgba(235, 235, 235, 1); --n-rail-height:8px; --n-text-color-circle:rgb(51, 54, 57); --n-text-color-line-inner:rgb(255, 255, 255); --n-text-color-line-outer:rgb(51, 54, 57); flex: 1 1 0%;">
@@ -353,10 +348,6 @@
                               </td>
                               <td>
                                 <!----><span>2022-10-01</span>
-                                <!---->
-                              </td>
-                              <td>
-                                <!----><span>2022-10-31</span>
                                 <!---->
                               </td>
                             </tr>
@@ -387,7 +378,7 @@
                                  style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-td-color:#fff; --n-td-color-modal:#fff; --n-td-color-popover:#fff; --n-td-text-color:rgb(51, 54, 57); --n-border-color:rgba(239, 239, 245, 1); --n-border-color-modal:rgba(239, 239, 245, 1); --n-border-color-popover:rgba(239, 239, 245, 1); --n-border-radius:3px; --n-font-size:14px; --n-th-color:rgba(250, 250, 252, 1); --n-th-color-modal:rgba(250, 250, 252, 1); --n-th-color-popover:rgba(250, 250, 252, 1); --n-th-font-weight:500; --n-th-text-color:rgb(31, 34, 37); --n-line-height:1.6; --n-td-padding:12px; --n-th-padding:12px; --n-td-color-striped:rgba(250, 250, 252, 1); --n-td-color-striped-modal:rgba(250, 250, 252, 1); --n-td-color-striped-popover:rgba(250, 250, 252, 1);">
                             <tbody data-v-95e7e64a="">
                             <tr data-v-95e7e64a="">
-                              <td data-v-95e7e64a="">访问密钥</td>
+                              <td data-v-95e7e64a="">邀请码</td>
                               <td data-v-95e7e64a="">
                                 <div data-v-95e7e64a=""><span
                                     style="word-break: break-word; display: none;">c3bcwtb6d76duezrk9b2h2o4j8u9om5c</span><a
@@ -399,8 +390,8 @@
                               <td data-v-95e7e64a="">2021-07-04</td>
                             </tr>
                             <tr data-v-95e7e64a="">
-                              <td data-v-95e7e64a="">账户限速</td>
-                              <td data-v-95e7e64a="">10 Mbps</td>
+                              <td data-v-95e7e64a="">账户等级</td>
+                              <td data-v-95e7e64a="">10 level</td>
                             </tr>
                             <!---->
                             </tbody>
@@ -440,18 +431,28 @@ import '@/css/swiper-bundle.min.css'
 import '@/css/person.css'
 import axios from 'axios'
 
-axios({
-  method: 'POST',    //提交方法
-  url: '/api/IsLoginServlet',    //后端的servlet登录接口
-  data: {
-  },
-}).then(res => {
-  document.getElementById("TeacherName").innerText = res.data;
-})
+
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "person",
+  data() {
+    return {
+      personName: null
+    }
+  },
+  created() {
+    const that = this;
+    axios({
+      method: 'POST',    //提交方法
+      url: '/api/IsLoginServlet',    //后端的servlet登录接口
+      data: {
+      },
+    }).then(res => {
+      document.getElementById("TeacherName").innerText = res.data;
+      that.personName = res.data;
+    })
+  },
   methods:{
     signIn:function (){
       alert("签到成功！");

@@ -108,12 +108,12 @@
             <div class="module-main scroll-box">
               <div class="module-items module-poster-items-small scroll-content">
                 <a v-for="i in dataList" v-bind:key="i"
-                  href="" title=""
+                  @click="classDone(i)" title="" @contextmenu.prevent="rightClick(i)"
                   class="module-poster-item module-item">
                 <div class="module-item-cover">
                   <div class="module-item-note">{{i}}</div>
                   <div class="module-item-pic"><img class="lazy lazyload"
-                                                    alt="" referrerpolicy="no-referrer" src="../static/picture/backgroud.png"></div>
+                                                     referrerpolicy="no-referrer" src="../static/picture/backgroud.png"></div>
                 </div>
                 <div class="module-poster-item-info">
                   <div class="module-poster-item-title">{{i}}</div>
@@ -196,7 +196,7 @@ export default {
         },
       }).then(res => {
         //对后端servlet接口返回的数据进行输出
-        that.dataList = res.data.split(",");
+        that.dataList = res.data
       })},50);
   },
 
@@ -207,10 +207,13 @@ export default {
     dialogNone:function (){
       document.getElementById("dialog").style.display="none";
     },
-
-
-
-
+    classDone(classname){
+      sessionStorage.setItem("className",classname);
+      this.$router.push({
+        name: 'classDone',//页面名字
+        path:'/classDone',//页面路劲 和上面名字任意一个都可以
+      })
+    },
     createClass() {
       axios({
         method: 'POST',    //提交方法
@@ -225,6 +228,27 @@ export default {
         this.dialogNone();
         location. reload();
       })
+    },
+    removeClass(className) {
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/DeleteClassServlet',    //后端的servlet登录接口
+        data: {
+          classname: className,
+        },
+      }).then(res => {
+        alert(res.data);     //对后端servlet接口返回的数据进行输出
+        this.dialogNone();
+        location. reload();
+      })
+    },
+    rightClick(className) {
+      // 鼠标右击触发事件
+      let del = confirm("您确定要删除吗？")
+      if (del){
+        console.log(className);
+        this.removeClass(className);
+      }
     },
   }
 }

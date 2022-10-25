@@ -45,12 +45,12 @@
               class="icon icon-home-o"></i><span>首页</span>
           </a></li>
           <li class="navbar-hr"></li>
-          <li class="swiper-slide navbar-item" ><a href="/class" title="班级" class="links"><i
+          <li class="swiper-slide navbar-item active" ><a href="/class" title="班级" class="links"><i
               class="icon-arrow-go"></i><i class="icon-dm"></i><span>班级</span></a></li>
           <li class="swiper-slide navbar-item" ><a href="/course" title="课程" class="links" @click="goCourse()"><i
               class="icon-arrow-go"></i><i class="icon-tv"></i><span>课程</span></a></li>
           <li class="navbar-hr"></li>
-          <li class="swiper-slide navbar-item active"><a href="/tag" class="links"><i
+          <li class="swiper-slide navbar-item"><a href="/tag" class="links"><i
               class="icon-arrow-go"></i><i class="icon icon-ranking-o"></i><span>标签</span></a>
           </li>
           <li class="swiper-slide navbar-item"><a href="/person"
@@ -96,62 +96,62 @@
                                                 d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67l-.5-.68C10.96 2.54 10.05 2 9 2C7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83L8.62 12L11 8.76l1-1.36l1 1.36L15.38 12L17 10.83L14.92 8H20v6z"
                                                 fill="currentColor"></path>
                                           </svg></i></div>
-                                    </span><span class="n-button__content"> 添加标签 </span>
+                                    </span><span class="n-button__content"> 添加学生 </span>
             </button>
             </div>
           </div>
 
-          <div data-v-357a65ed="" class="fav_list_box">
-            <div  class="fav_list_title">
-              <h3 class="fav_list_title_h3">标签</h3>
-              <div class="fav_num">
-                共<span >5</span>条
-              </div>
+        <div data-v-357a65ed="" class="fav_list_box">
+          <div  class="fav_list_title">
+            <h3 class="fav_list_title_h3">{{name}}</h3>
+            <div class="fav_num">
+              共<span >5</span>条
             </div>
-            <div  class="my_fav_con">
-              <div>
-                <ul  class="my_fav_list">
-                  <li class="my_fav_list_li">
-                    <a  class="my_fav_list_a" href="#" style="color:black;">
-                      <strong>名称</strong>
-                    </a>
+          </div>
+          <div  class="my_fav_con">
+            <div>
+              <ul  class="my_fav_list">
+                <li class="my_fav_list_li">
+                  <a  class="my_fav_list_a" href="#" style="color:black;">
+                    <strong>姓名</strong>  <span style="margin-left: 300px"><strong>学号</strong></span>
+                  </a>
 
-                    <label class="my_fav_list_label">
-                      <span  class="my_fav_list_a" style="float: left;color: black"><strong>操作</strong></span>
-                    </label>
-                  </li>
-
-
-                  <li class="my_fav_list_li">
-                    <p  class="my_fav_list_a" >
-                      Java
-                    </p>
-
-                    <label class="my_fav_list_label">
-                      <a  class="cancel_fav" style="float: left">移除<em></em></a>
-                    </label>
-                  </li>
+                  <label class="my_fav_list_label">
+                    <span  class="my_fav_list_a" style="float: left;color: black"><strong>操作</strong></span>
+                  </label>
+                </li>
 
 
-                </ul> <!---->
-              </div>
+                <li class="my_fav_list_li" v-for="(value,key) in map" v-bind:key="key">
+                  <p  class="my_fav_list_a" >
+                    {{key}}<span style="margin-left: 300px">{{value}}</span>
+                  </p>
+
+                  <label class="my_fav_list_label">
+                    <a  class="cancel_fav" style="float: left" @click="removeStu(value)">移除<em></em></a>
+                  </label>
+                </li>
+
+
+              </ul> <!---->
             </div>
           </div>
         </div>
+      </div>
         <div id="dialog" class="dialog" style="text-align: center;display: none;position: absolute;left: 50%;top: 50%;
         transform: translate(-50%,-50%);height: 150px">
           <img @click="dialogNone" style="float: right;width: 30px;height: 30px" src="../static/picture/close.png">
-          <h2><img src="" alt="" class="close" />添加标签</h2>
-          <form id="loginForm" >
+          <h2><img src="" alt="" class="close" />添加学生(输入学号)</h2>
+          <div id="loginForm" >
             <div class="info"></div>
-            <div class="pass"><input type="text" class="text" style="width: 300px"/></div>
+            <div class="pass"><input type="text" id="studentID" class="text" style="width: 300px"/></div>
             <br>
-            <div class="button"><button class="submit" value="">添加课程</button>
+            <div class="button"><button @click="addStu()">添加学生</button>
             </div>
-          </form>
+          </div>
         </div>
-      </div>
-    </div>
+          </div>
+        </div>
   </div>
   </body>
 
@@ -176,14 +176,27 @@ axios({
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "tag",
+  name: "classDone",
   data() {
     return {
       name: null,
+      map:null,
     };
   },
   created() {
     const that = this;
+    console.log(sessionStorage.getItem("className"));
+    let className = sessionStorage.getItem("className");
+    that.name = className;
+    axios({
+      method: 'POST',    //提交方法
+      url: '/api/SelectStuServlet',    //后端的servlet登录接口
+      data: {
+        classname:className
+      },
+    }).then(res => {
+        that.map= res.data;
+    })
   },
   methods: {
     dialogShow: function () {
@@ -192,7 +205,30 @@ export default {
     dialogNone: function () {
       document.getElementById("dialog").style.display = "none";
     },
-
+    removeStu(id){
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/DeleteStuServlet',    //后端的servlet登录接口
+        data: {
+          classname:this.name,
+          id:id,
+        },
+      }).then(res => {
+        location. reload();
+      })
+    },
+    addStu(){
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/StudentAddServlet',    //后端的servlet登录接口
+        data: {
+          classname:this.name,
+          studentid:document.getElementById("studentID").value,
+        },
+      }).then(res => {
+        location. reload();
+      })
+    },
   }
 }
 </script>
