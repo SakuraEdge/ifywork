@@ -5,7 +5,7 @@
       <div class="header-box">
         <div class="logo"><a href="/" title="班级教务系统"><img
             style="height:100% !important;" class="logo1 pcbdmap"
-            src="../../public/picture/logo.png" /></a></div>
+            src="../static/picture/logo.png" /></a></div>
         <div class="search-box">
           <div class="searchbar-main">
             <form name="search">
@@ -19,8 +19,9 @@
         <div class="header-op">
           <div class="header-op-list">
             <div class="drop">
-              <div class="header-op-list-btn header-op-history"><i
-                  class="icon icon-history-o"></i><span>班级记录</span></div>
+              <div class="header-op-list-btn header-op-history"><span><p id="TeacherName" style="color: #36ad6a">
+                    未登录
+                </p></span></div>
               <div class="drop-content drop-history">
                 <div class="drop-content-box">
                   <ul class="drop-content-items historical">
@@ -89,7 +90,16 @@
 <script>
 import '@/css/style.css'
 import '@/css/swiper-bundle.min.css'
-import Vue from "vue";
+import axios from 'axios'
+
+axios({
+  method: 'POST',    //提交方法
+  url: '/api/IsLoginServlet',    //后端的servlet登录接口
+  data: {
+  },
+}).then(res => {
+  document.getElementById("TeacherName").innerText = res.data;
+})
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
