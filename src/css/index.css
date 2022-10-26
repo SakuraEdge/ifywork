@@ -1,0 +1,483 @@
+.bg,
+.bg:after {
+    position: absolute;
+    height: 100vh
+}
+
+.board .float-down,
+.board .title-bar {
+    font-family: iconfont;
+    text-decoration: none
+}
+
+@font-face {
+    font-family: iconfont;
+    src: url(//at.alicdn.com/t/font_2353907_e2og6dtx4cc.eot);
+    src: url(//at.alicdn.com/t/font_2353907_e2og6dtx4cc.eot?#iefix) format("embedded-opentype"), url(//at.alicdn.com/t/font_2353907_e2og6dtx4cc.woff2) format("woff2"), url(//at.alicdn.com/t/font_2353907_e2og6dtx4cc.woff) format("woff"), url(//at.alicdn.com/t/font_2353907_e2og6dtx4cc.ttf) format("truetype"), url(//at.alicdn.com/t/font_2353907_e2og6dtx4cc.svg#iconfont) format("svg")
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 500;
+    letter-spacing: .3rem;
+    text-transform: uppercase
+}
+
+a {
+    color: inherit
+}
+
+.bg {
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    overflow: hidden
+}
+
+.bg:after {
+    content: "";
+    margin-top: -5vh;
+    background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), var(--bg);
+    background-size: cover;
+    width: 100vw
+}
+
+.board {
+    width: 100%;
+    position: sticky;
+    top: 5vh;
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    margin-top: 5vh;
+    color: #fff;
+    box-shadow: 0 -5px 5px rgba(0, 0, 0, .06)
+}
+
+.board:nth-child(1) {
+    border-radius: 0;
+    top: 0vh;
+    margin-top: 0;
+    height: 100vh
+}
+
+.board:nth-child(1) .title-bar {
+    position: initial;
+    width: 125px;
+    margin-top: 0;
+    float: left
+}
+
+.board:nth-child(2) .title-bar {
+    width: calc(100% - 125px);
+    margin-left: 125px
+}
+
+.board:nth-child(2) .title-bar .bg {
+    width: calc(100% + 125px);
+    margin-left: -125px
+}
+
+.board:nth-child(3) .title-bar {
+    width: calc(100% - 250px);
+    margin-left: 250px
+}
+
+.board:nth-child(3) .title-bar .bg {
+    width: calc(100% + 250px);
+    margin-left: -250px
+}
+
+.board:nth-child(4) .title-bar {
+    width: calc(100% - 375px);
+    margin-left: 375px
+}
+
+.board:nth-child(4) .title-bar .bg {
+    width: calc(100% + 375px);
+    margin-left: -375px
+}
+
+.board .title-bar-btns {
+    position: absolute;
+    top: 0
+}
+
+.board .title-bar {
+    position: absolute;
+    box-shadow: -5px -5px 5px rgba(0, 0, 0, .06);
+    margin-top: -5vh;
+    top: 0;
+    box-sizing: border-box;
+    align-items: center;
+    border-top-left-radius: 20px;
+    height: 5vh;
+    display: flex;
+    padding: 25px 35px;
+    overflow: hidden;
+    font-size: 1em;
+    color: #fff
+}
+
+.board .title-bar .bg {
+    z-index: -1;
+    top: 0;
+    left: 0
+}
+
+.board .title-bar .bg:after {
+    margin-top: 0 !important
+}
+
+.board .other {
+    color: #cfcfcf;
+    transition: all .3s
+}
+
+.board .other:hover {
+    color: #fff
+}
+
+.board .left-text {
+    position: absolute;
+    left: 15%
+}
+
+.board .left-text .bigtext {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 60px
+}
+
+.board .left-text .middletext {
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 40px
+}
+
+.board .left-text .actions {
+    display: flex;
+    align-items: center
+}
+
+.board .left-text .actions .btn {
+    padding: 15px 40px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #fff;
+    transition: all .3s
+}
+
+.board .left-text .actions .btn:hover {
+    background-color: #fff;
+    color: #333
+}
+
+.board .left-text .actions .btn:active {
+    transform: scale(.98)
+}
+
+.board .right-pic video,
+.board-price .plans .plan {
+    transition: all .5s;
+    opacity: 0;
+    transform: translate(0, 10vh)
+}
+
+.board .left-text .actions .btn:nth-child(1) {
+    margin-right: 20px
+}
+
+.board .right-pic {
+    position: absolute;
+    user-select: none;
+    right: 15%
+}
+
+.board .right-pic video {
+    border-radius: 2px;
+    max-width: 1388px;
+    width: 40vw;
+    height: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5)
+}
+
+.board .float-down {
+    animation: 1s ease-in-out 0s infinite alternate float;
+    animation-direction: alternate-reverse;
+    position: absolute;
+    font-size: 40px;
+    right: calc(50% - 20px);
+    bottom: 5%;
+    color: rgba(255, 255, 255, .5);
+    transition: all .3s
+}
+
+.board .float-down:hover {
+    color: #fff
+}
+
+.board-index {
+    background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(../static/picture/backgroud.png);
+    background-size: cover;
+    background-position: center
+}
+
+.board-price {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.board-price .plans {
+    display: flex;
+    align-items: stretch;
+    text-align: center
+}
+
+.board-price .plans .plan {
+    width: 250px;
+    margin-right: 5vw;
+    display: flex;
+    background-color: rgba(25, 25, 25, .9);
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    border-radius: 20px;
+    color: #cfcfcf
+}
+
+.board-price .plans .plan .level {
+    margin-bottom: 25px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all .3s;
+    flex-direction: column;
+    font-size: 23px
+}
+
+.board-price .plans .plan .level .level-icon {
+    font-family: iconfont;
+    background: linear-gradient(to bottom, rgba(25, 25, 25, .9) 50%, transparent 50%);
+    border-radius: 50%;
+    width: 80px;
+    user-select: none;
+    transition: all .3s;
+    margin-top: -60px;
+    height: 80px;
+    justify-content: center;
+    color: #cfcfcf;
+    align-items: center;
+    display: flex;
+    font-size: 35px;
+    margin-bottom: 10px
+}
+
+.board-price .plans .plan .quota {
+    margin-bottom: 15px
+}
+
+.board-price .plans .plan .quota .quota-item {
+    font-size: 15px;
+    display: flex;
+    padding: 5px 0;
+    justify-content: space-between
+}
+
+.board-price .plans .plan:nth-last-child(1) {
+    margin-right: 0
+}
+
+.board-price .plans .plan:hover {
+    color: #fff;
+    transform: translate(0, -3px)
+}
+
+.board-price .plans .plan:hover .level-icon {
+    color: #fff
+}
+
+.board-price .plans .price {
+    margin-top: auto;
+    padding: 20px 10px;
+    color: #cfcfcf;
+    font-size: 16px;
+    transition: all .3s;
+    text-decoration: none;
+    border-radius: 20px
+}
+
+.board-price .plans .price:hover {
+    color: #fff;
+    background-color: rgba(17, 17, 17, .5);
+    transform: translate(0, -3px)
+}
+
+.board-price .plans .price:active {
+    transform: scale(.98)
+}
+
+.board-about .bg {
+    height: 95vh;
+    background-color: #222
+}
+
+.board-about .left-text a {
+    text-decoration: none
+}
+
+.board-about #about-bg canvas {
+    margin-top: -5vh
+}
+
+.board-about #mobile-br {
+    display: none
+}
+
+.animated-up {
+    transform: translate(0, 0) !important;
+    opacity: 1 !important
+}
+
+@keyframes float {
+    from {
+        transform: translate(0, 0)
+    }
+
+    to {
+        transform: translate(0, 5px)
+    }
+}
+
+::-webkit-scrollbar {
+    display: none
+}
+
+@media screen and (max-width:900px) {
+    body {
+        font-size: 14px
+    }
+
+    .board .title-bar {
+        padding: 0
+    }
+
+    .board .title-bar span {
+        width: 25vw;
+        text-align: center
+    }
+
+    .board:nth-child(1) .title-bar-btns {
+        width: 100vw
+    }
+
+    .board:nth-child(1) .title-bar {
+        position: initial;
+        width: 25vw !important;
+        margin-top: 0;
+        float: left;
+        justify-content: center
+    }
+
+    .board:nth-child(2) .title-bar {
+        position: absolute;
+        width: 75vw !important;
+        right: 0 !important
+    }
+
+    .board:nth-child(2) .title-bar .bg {
+        width: 100vw;
+        margin-left: -25vw
+    }
+
+    .board:nth-child(3) .title-bar {
+        width: 50vw !important;
+        right: 0 !important
+    }
+
+    .board:nth-child(3) .title-bar .bg {
+        width: 100vw;
+        margin-left: -50vw
+    }
+
+    .board:nth-child(4) .title-bar {
+        width: 25vw !important;
+        right: 0 !important
+    }
+
+    .board:nth-child(4) .title-bar .bg {
+        width: 100vw;
+        margin-left: -75vw
+    }
+
+    .board {
+        justify-content: center
+    }
+
+    .board .left-text {
+        position: initial;
+        left: unset;
+        text-align: center
+    }
+
+    .board .left-text .actions {
+        justify-content: center
+    }
+
+    .board .left-text #mobile-br {
+        display: block
+    }
+
+    .float-down {
+        bottom: 10% !important
+    }
+
+    .board-intro {
+        flex-direction: column
+    }
+
+    .board-intro .right-pic {
+        margin-top: 30px;
+        position: initial !important;
+        left: unset;
+        text-align: center
+    }
+
+    .board-intro .right-pic video {
+        max-width: 90vw;
+        width: 90vw
+    }
+
+    .board-price .plans {
+        overflow: scroll;
+        scroll-snap-type: x mandatory;
+        padding: 50px 5vw;
+        -webkit-overflow-scrolling: touch
+    }
+
+    .board-price .plans .plan {
+        flex-shrink: 0;
+        scroll-snap-align: center
+    }
+
+    .board-price .plans::after {
+        content: "";
+        width: 5vw;
+        flex-shrink: 0
+    }
+
+    .left-text {
+        padding: 0 20px
+    }
+}

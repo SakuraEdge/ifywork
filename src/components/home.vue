@@ -81,19 +81,81 @@
       </div>
     </div>
     <div class="main">
-      <div class="content">
-        <video
-               src=""
-               ></video>
+      <div class="content" style="font-size: 16px">
+        <section class="board board-index">
+          <div class="left-text">
+            <h2 class="bigtext">GWORK</h2>
+            <h3 class="middletext">轻松，快捷</h3>
+            <div class="actions">
+              <a href="/person" class="btn">个人信息</a>
+              <a href="/class" class="btn">管理面板</a>
+            </div>
+          </div>
+          <a class="float-down" href="https://www.natfrp.com/#intro"></a>
+        </section>
+        <section class="board board-intro" style="--bg: url(https://nyat-static.globalslb.net/natfrp/index/bg2.jpg)">
+          <a onclick="document.documentElement.scrollTop=window.innerHeight" id="intro" href="#" class="title-bar">
+            <div class="bg"></div>
+            <span> 介绍</span>
+          </a>
+          <div class="bg"></div>
+          <div class="left-text">
+            <div class="middletext">为什么要学习计算机语言？</div>
+            穿后台、建网站、做调试、开游戏……<br><br>不会计算机语言，这些都无从谈起
+          </div>
+          <div class="right-pic">
+          </div>
+          <a class="float-down" href="https://www.natfrp.com/#price"></a>
+        </section>
+        <section class="board board-price" style="--bg: url(https://nyat-static.globalslb.net/natfrp/index/bg3.jpg)">
+          <a onclick="document.documentElement.scrollTop=window.innerHeight*2" href="#" id="price" class="title-bar">
+            <div class="bg"></div>
+            <span></span>
+          </a>
+          <div class="bg"></div>
+          <div class="left-text">
+            <div class="middletext">耽误的事情太多</div>
+            事情可就做不完了<br><br>劳逸结合是不错，但可别放松过头
+          </div>
+          <div class="right-pic">
+
+          </div>
+          <a class="float-down" href="https://www.natfrp.com/#price"></a>
+
+
+
+        </section>
+        <section class="board board-about">
+          <a href="#" id="about" class="title-bar">
+            <div class="bg" id="about-bg-s"></div>
+            <span> 关于</span>
+          </a>
+
+          <div class="bg" id="about-bg"></div>
+          <div class="left-text">
+            <div class="middletext">GWORK 由 <br id="mobile-br">周毅与谢利杰共同开发</div>
+            <br>
+            <br>
+            <span id="comname">安徽信息工程学院 </span> · 产业学院
+
+            <div style="margin-top: 40px" class="actions">
+              <a href="#" class="btn">QQ</a>
+              <a href="#" id="joinusbtn" class="btn">微信</a>
+            </div>
+          </div>
+        </section>
+
       </div>
-        </div>
-      </div>
+    </div>
+  </div>
   </body>
 
 </template>
 
 <script>
 import '@/css/style.css'
+import '@/css/person.css'
+import '@/css/index.css'
 import '@/css/swiper-bundle.min.css'
 import axios from 'axios'
 
@@ -110,6 +172,7 @@ export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "home"
 }
+// eslint-disable-next-line no-undef
 </script>
 
 <style scoped>
