@@ -106,17 +106,17 @@
 
           <div class="module">
             <div class="module-heading"><i class="icon-hot" style="color:#FF0000"></i>
-              <h2 class="module-title">知识点</h2>
+              <h2 class="module-title">{{KLName}}</h2>
             </div>
             <div class="module-main scroll-box">
               <div class="module-items module-poster-items-small scroll-content">
-                <a v-for="i in klList" v-bind:key="i" @click="paper(i)"
+                <a v-for="i in paperList" v-bind:key="i" @click="showPaper(i)"
                     title="" @contextmenu.prevent="rightClick(i)"
                     class="module-poster-item module-item">
                   <div class="module-item-cover">
-                    <div class="module-item-note">{{i}}</div>
+                    <div class="module-item-note">知识点</div>
                     <div class="module-item-pic"><img class="lazy lazyload"
-                                                      referrerpolicy="no-referrer" src="../static/picture/KL.gif"></div>
+                                                      referrerpolicy="no-referrer" src="../static/picture/paper.gif"></div>
                   </div>
                   <div class="module-poster-item-info">
                     <div class="module-poster-item-title">{{i}}</div>
@@ -138,17 +138,75 @@
           </div>
         </div>
         <div id="dialog" class="dialog" style="text-align: center;display: none;position: absolute;left: 50%;top: 50%;
-        transform: translate(-50%,-50%);height: 150px">
+        transform: translate(-50%,-50%);height: 400px">
           <img @click="dialogNone" style="float: right;width: 30px;height: 30px" src="../static/picture/close.png">
-          <h2><img src="" alt="" class="close" />添加知识点</h2>
+          <h2><img src="" alt="" class="close" />添加试题</h2>
           <div id="loginForm" >
             <div class="info"></div>
-            <div class="pass"><input type="text" class="text" style="width: 300px" id="KL"/></div>
+            <div class="pass">&nbsp;&nbsp;题干：<input type="text" class="text" style="width: 200px" id="page"/></div>
             <br>
-            <div class="button"><button class="submit" @click="addKL()">添加知识点</button>
+            <div class="pass">A选项：<input type="text" class="text" style="width: 200px" id="a"/></div>
+            <br>
+            <div class="pass">B选项：<input type="text" class="text" style="width: 200px" id="b"/></div>
+            <br>
+            <div class="pass">C选项：<input type="text" class="text" style="width: 200px" id="c"/></div>
+            <br>
+            <div class="pass">D选项：<input type="text" class="text" style="width: 200px" id="d"/></div>
+            <br>
+            <div class="pass">&nbsp;&nbsp;答案：<input type="text" class="text" style="width: 200px" id="answer"/></div>
+            <br>
+            <div class="button"><button class="submit" @click="addPaper()">添加试题</button>
             </div>
           </div>
         </div>
+
+      <div id="dialogPaper" class="dialog" name="paper" style="text-align: left;display:none;position: absolute;left: 50%;top: 50%;white-space:pre-line;
+        transform: translate(-50%,-50%);width: 500px;height: 450px">
+        <img @click="dialogPaperNone()" style="float: right;width: 30px;height: 30px" src="../static/picture/close.png">
+        <h2><img src="" alt="" class="close" />试题</h2>
+
+        <div>
+          <div class="fav_list_box">
+            <div  class="my_fav_con">
+              <div>
+                <ul  class="my_fav_list">
+                  <li class="my_fav_list_li">
+                    <a  class="my_fav_list_a" href="#">
+                      {{paperMap[0]}}
+                    </a>
+                  </li>
+                  <li class="my_fav_list_li" >
+                    <a  class="my_fav_list_a" href="#">
+                      {{paper[0]}}
+                    </a>
+                  </li>
+                  <li class="my_fav_list_li">
+                    <a  class="my_fav_list_a" href="#">
+                      {{paper[1]}}
+                    </a>
+                  </li>
+                  <li class="my_fav_list_li">
+                    <a  class="my_fav_list_a" href="#">
+                      {{paper[2]}}
+                    </a>
+                  </li>
+                  <li class="my_fav_list_li">
+                    <a  class="my_fav_list_a" href="#">
+                      {{paper[3]}}
+                    </a>
+                  </li>
+                  <li class="my_fav_list_li">
+                    <a  class="my_fav_list_a" href="#">
+                      {{paper[4]}}
+                    </a>
+                  </li>
+
+                </ul> <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </body>
@@ -165,11 +223,14 @@ import axios from 'axios'
 
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "other",
+  name: "paper",
   data() {
     return {
       name: null,
-      klList:[],
+      KLName:null,
+      paperList:[],
+      paperMap:[1,2],
+      paper:[1,2,3,4,5],
     };
   },
   created() {
@@ -184,16 +245,18 @@ export default {
       that.name = res.data;
     })
 
-    setTimeout(()=>{
-      axios({
-        method: 'POST',    //提交方法
-        url: '/api/SelectKLServlet',    //后端的servlet登录接口
-        data: {
-        },
-      }).then(res => {
-        //对后端servlet接口返回的数据进行输出
-        that.klList =  res.data;
-      })},50);
+    console.log(sessionStorage.getItem("KL"));
+    let KL = sessionStorage.getItem("KL");
+    that.KLName = KL;
+    axios({
+      method: 'POST',    //提交方法
+      url: '/api/SelectPaperNameServlet',    //后端的servlet登录接口
+      data: {
+        knowledge:KL
+      },
+    }).then(res => {
+      that.paperList= res.data;
+    })
   },
   methods: {
     dialogShow: function () {
@@ -202,28 +265,52 @@ export default {
     dialogNone: function () {
       document.getElementById("dialog").style.display = "none";
     },
-    addKL(){
+    dialogPaperShow: function () {
+      document.getElementById("dialogPaper").style.display = "block";
+    },
+    dialogPaperNone: function () {
+      document.getElementById("dialogPaper").style.display = "none";
+    },
+    addPaper(){
       axios({
         method: 'POST',    //提交方法
-        url: '/api/KLAddServlet',    //后端的servlet登录接口
+        url: '/api/PaperAddServlet',    //后端的servlet登录接口
         data: {
-          knowledge:document.getElementById("KL").value,
+          name:document.getElementById("page").value,
+          a:document.getElementById("a").value,
+          b:document.getElementById("b").value,
+          c:document.getElementById("c").value,
+          d:document.getElementById("d").value,
+          reala:document.getElementById("answer").value,
+          knowledge:this.KLName,
         }
       }).then(res => {
         alert("添加成功！");
         location.reload();
       })
     },
-    removeKL(KL) {
+    showPaper(paperName){
+      this.dialogPaperShow();
       axios({
         method: 'POST',    //提交方法
-        url: '/api/DeleteKLServlet',    //后端的servlet登录接口
+        url: '/api/SelectPaperServlet',    //后端的servlet登录接口
         data: {
-          knowledge: KL,
+          papername:paperName
+        },
+      }).then(res => {
+        this.paperMap = res.data;
+        this.paper = this.paperMap[1].split('|')
+      })
+    },
+    removePaper(paperName) {
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/DeletePaperServlet',    //后端的servlet登录接口
+        data: {
+          paper: paperName,
         },
       }).then(res => {
         alert(res.data);     //对后端servlet接口返回的数据进行输出
-        this.dialogNone();
         location. reload();
       })
     },
@@ -231,15 +318,8 @@ export default {
       // 鼠标右击触发事件
       let del = confirm("您确定要删除吗？")
       if (del){
-        this.removeKL(KL);
+        this.removePaper(KL);
       }
-    },
-    paper(KL){
-      sessionStorage.setItem("KL",KL);
-      this.$router.push({
-        name: 'paper',//页面名字
-        path:'/paper',//页面路劲 和上面名字任意一个都可以
-      })
     },
   }
 }

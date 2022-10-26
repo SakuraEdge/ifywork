@@ -45,6 +45,11 @@ const routes=[
         path:'/other',
         name:'other',
         component:()=>import('../components/other.vue')
+    },
+    {
+        path:'/paper',
+        name:'paper',
+        component:()=>import('../components/paper.vue')
     }
 ]
 const router = createRouter({

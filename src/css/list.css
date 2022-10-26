@@ -4,19 +4,9 @@ li {
     display: list-item;
 }
 
-.fav_list{
-    min-height: 95%;
-    padding: 0 32px 30px;
-    margin-top: 50px;
-    margin-right: 50px;
-    margin-left: 200px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,.05);
-}
 .fav_list_box{
     box-sizing: border-box;
     display: block;
-    overflow: hidden;
     zoom: 1;
 }
 .fav_list_title{
@@ -44,7 +34,6 @@ li {
     vertical-align: baseline;
     border: 0;
     display: block;
-    overflow: hidden;
     zoom: 1;
 }
 .my_fav_list_li{
@@ -54,17 +43,13 @@ li {
     list-style: none;
 }
 .my_fav_list_a{
-    width: 78%;
+    width: 95%;
     line-height: 24px;
     font-size: 16px;
     vertical-align: middle;
     color: #4d4d4d;
     text-decoration: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     display: inline-block;
-    overflow: hidden;
-    cursor: pointer;
 }
 .my_fav_list_label{
     margin-left: 10%;
