@@ -87,7 +87,7 @@ export default {
             userName: document.getElementById("login_id").value,    //传输的用户名
           },
         }).then(res =>{
-          alert("登录成功！\n欢迎你,"+ document.getElementById("login_id").value);
+
         })
       }
 
