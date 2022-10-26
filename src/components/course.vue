@@ -41,21 +41,24 @@
       <div class="navbar">
         <ul class="navbar-items swiper-wrapper">
           <li class="swiper-slide navbar-item"><a href="/home" class="links">
-            <div class="current"></div><i class="icon-arrow-go"></i><i
-              class="icon icon-home-o"></i><span>首页</span>
+            <div class="current"></div><img src="../static/picture/tag/home.png" style="width: 15px;height: 15px;"><span>首页</span>
           </a></li>
           <li class="navbar-hr"></li>
-          <li class="swiper-slide navbar-item" ><a href="/class" title="班级" class="links"><i
-              class="icon-arrow-go"></i><i class="icon-dm"></i><span>班级</span></a></li>
-          <li class="swiper-slide navbar-item active" ><a href="/course" title="课程" class="links" @click="goCourse()"><i
-              class="icon-arrow-go"></i><i class="icon-tv"></i><span>课程</span></a></li>
-          <li class="navbar-hr"></li>
-          <li class="swiper-slide navbar-item"><a href="/tag" class="links"><i
-              class="icon-arrow-go"></i><i class="icon icon-ranking-o"></i><span>标签</span></a>
+          <li class="swiper-slide navbar-item"><a href="/class" title="班级" class="links">
+            <img src="../static/picture/tag/class.png" style="width: 15px;height: 15px;"><span>班级</span></a></li>
+          <li class="swiper-slide navbar-item active" ><a href="/course" title="课程" class="links" @click="goCourse()">
+            <img src="../static/picture/tag/course.png" style="width: 15px;height: 15px;"><span>课程</span></a></li>
+          <li class="swiper-slide navbar-item"><a href="/tag" class="links">
+            <img src="../static/picture/tag/tag.png" style="width: 15px;height: 15px;">
+            <span>标签</span></a>
           </li>
+          <li class="swiper-slide navbar-item"><a href="/other" class="links">
+            <img src="../static/picture/tag/knowlege.png" style="width: 15px;height: 15px;"><span>知识点</span></a>
+          </li>
+          <li class="navbar-hr"></li>
           <li class="swiper-slide navbar-item"><a href="/person"
-                                                  class="links"><i class="icon-arrow-go"></i><i
-              class="icon icon-phone-o"></i><span>个人信息</span></a></li>
+                                                  class="links">
+            <img src="../static/picture/tag/person.png" style="width: 20px;height: 20px;"><span>个人信息</span></a></li>
         </ul>
       </div>
       <div class="side-op">
@@ -102,20 +105,20 @@
           </div>
             <div class="module">
               <div class="module-heading"><i class="icon-hot" style="color:#FF0000"></i>
-                <h2 class="module-title">{{name}}</h2>
+                <h2 class="module-title">课程</h2>
               </div>
               <div class="module-main scroll-box">
                 <div class="module-items module-poster-items-small scroll-content">
-                  <a
-                     title="" @contextmenu.prevent="rightClick(key)"
+                  <a v-for="(key,value) in map" v-bind:key="key"
+                     title="" @contextmenu.prevent="rightClick(value)"
                      class="module-poster-item module-item">
                     <div class="module-item-cover">
-                      <div class="module-item-note">企业级软件开发</div>
+                      <div class="module-item-note">{{key}}</div>
                       <div class="module-item-pic"><img class="lazy lazyload"
                                                         referrerpolicy="no-referrer" src="../static/picture/course.gif"></div>
                     </div>
                     <div class="module-poster-item-info">
-                      <div class="module-poster-item-title">企业级软件开发</div>
+                      <div class="module-poster-item-title">{{value}}</div>
                     </div>
                   </a>
                   <a href="" title=""
@@ -137,15 +140,15 @@
         transform: translate(-50%,-50%);height: 200px">
           <img @click="dialogNone" style="float: right;width: 30px;height: 30px" src="../static/picture/close.png">
           <h2><img src="" alt="" class="close" />添加课程</h2>
-          <form id="loginForm" >
+          <div id="loginForm" >
             <div class="info"></div>
-            <div class="pass">课程名称：<input type="text" class="text"/></div>
+            <div class="pass">课程名称：<input type="text" class="text" id="courseName"/></div>
             <br>
-            <div class="pass">课程标签：<input type="text" class="text"/></div>
+            <div class="pass">课程标签：<input type="text" class="text" id="tag"/></div>
             <br>
-            <div class="button"><button class="submit" value="">添加课程</button>
+            <div class="button"><button class="submit" @click="addCourse()">添加课程</button>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -161,25 +164,37 @@ import '@/css/person.css'
 import '@/css/dialog.css'
 import axios from 'axios'
 
-axios({
-  method: 'POST',    //提交方法
-  url: '/api/IsLoginServlet',    //后端的servlet登录接口
-  data: {
-  },
-}).then(res => {
-  document.getElementById("TeacherName").innerText = res.data;
-})
-
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
   name: "course",
   data() {
     return {
       name: null,
+      map:null,
     };
   },
   created() {
     const that = this;
+    axios({
+      method: 'POST',    //提交方法
+      url: '/api/IsLoginServlet',    //后端的servlet登录接口
+      data: {
+      },
+    }).then(res => {
+      document.getElementById("TeacherName").innerText = res.data;
+      that.name = res.data;
+    })
+
+    setTimeout(()=>{
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/SelectCourseServlet',    //后端的servlet登录接口
+        data: {
+          teacherName:that.name
+        },
+      }).then(res => {
+        that.map = res.data;
+      })},50);
   },
   methods: {
     dialogShow: function () {
@@ -188,7 +203,40 @@ export default {
     dialogNone: function () {
       document.getElementById("dialog").style.display = "none";
     },
-
+    addCourse(){
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/CourseAddServlet',    //后端的servlet登录接口
+        data: {
+          teachername:this.name,
+          coursename:document.getElementById("courseName").value,
+          tag:document.getElementById("tag").value,
+        }
+      }).then(res => {
+        alert("添加成功！");
+        location.reload();
+      })
+    },
+    removeCourse(courseName) {
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/DeleteCourseServlet',    //后端的servlet登录接口
+        data: {
+          coursename: courseName,
+        },
+      }).then(res => {
+        alert(res.data);     //对后端servlet接口返回的数据进行输出
+        this.dialogNone();
+        location. reload();
+      })
+    },
+    rightClick(courseName) {
+      // 鼠标右击触发事件
+      let del = confirm("您确定要删除吗？")
+      if (del){
+        this.removeCourse(courseName);
+      }
+    },
   }
 }
 </script>

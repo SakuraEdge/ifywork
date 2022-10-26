@@ -44,7 +44,7 @@
             <div class="current"></div><img src="../static/picture/tag/home.png" style="width: 15px;height: 15px;"><span>首页</span>
           </a></li>
           <li class="navbar-hr"></li>
-          <li class="swiper-slide navbar-item active"><a href="/class" title="班级" class="links">
+          <li class="swiper-slide navbar-item"><a href="/class" title="班级" class="links">
             <img src="../static/picture/tag/class.png" style="width: 15px;height: 15px;"><span>班级</span></a></li>
           <li class="swiper-slide navbar-item" ><a href="/course" title="课程" class="links" @click="goCourse()">
             <img src="../static/picture/tag/course.png" style="width: 15px;height: 15px;"><span>课程</span></a></li>
@@ -52,7 +52,7 @@
             <img src="../static/picture/tag/tag.png" style="width: 15px;height: 15px;">
             <span>标签</span></a>
           </li>
-          <li class="swiper-slide navbar-item"><a href="/other" class="links">
+          <li class="swiper-slide navbar-item active"><a href="/other" class="links">
             <img src="../static/picture/tag/knowlege.png" style="width: 15px;height: 15px;"><span>知识点</span></a>
           </li>
           <li class="navbar-hr"></li>
@@ -99,27 +99,27 @@
                                                 d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67l-.5-.68C10.96 2.54 10.05 2 9 2C7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83L8.62 12L11 8.76l1-1.36l1 1.36L15.38 12L17 10.83L14.92 8H20v6z"
                                                 fill="currentColor"></path>
                                           </svg></i></div>
-                                    </span><span class="n-button__content"> 添加学生 </span>
+                                    </span><span class="n-button__content"> 添加知识点 </span>
             </button>
             </div>
           </div>
 
           <div class="module">
             <div class="module-heading"><i class="icon-hot" style="color:#FF0000"></i>
-              <h2 class="module-title">{{name}}</h2>
+              <h2 class="module-title">知识点</h2>
             </div>
             <div class="module-main scroll-box">
               <div class="module-items module-poster-items-small scroll-content">
-                <a v-for="(key,value) in map" v-bind:key="key"
-                    title="" @contextmenu.prevent="rightClick(key)"
-                   class="module-poster-item module-item">
+                <a v-for="i in klList" v-bind:key="i"
+                    title="" @contextmenu.prevent="rightClick(i)"
+                    class="module-poster-item module-item">
                   <div class="module-item-cover">
-                    <div class="module-item-note">学号：{{key}}</div>
+                    <div class="module-item-note">{{i}}</div>
                     <div class="module-item-pic"><img class="lazy lazyload"
-                                                      referrerpolicy="no-referrer" src="../static/picture/classPerson.gif"></div>
+                                                      referrerpolicy="no-referrer" src="../static/picture/tag.gif"></div>
                   </div>
                   <div class="module-poster-item-info">
-                    <div class="module-poster-item-title">{{value}}</div>
+                    <div class="module-poster-item-title">{{i}}</div>
                   </div>
                 </a>
                 <a href="" title=""
@@ -135,22 +135,22 @@
               </a></div>
               </div>
             </div>
-        <div id="dialog" class="dialog" style="text-align: center;display: none;position: absolute;left: 50%;top: 50%;
-        transform: translate(-50%,-50%);height: 150px">
-          <img @click="dialogNone" style="float: right;width: 30px;height: 30px" src="../static/picture/close.png" alt="">
-          <h2><img src="" alt="" class="close" />添加学生(输入学号)</h2>
-          <form id="loginForm" >
-            <div class="info"></div>
-            <div class="pass"><input type="text" id="studentID" class="text" style="width: 300px"/></div>
-            <br>
-            <div class="button"><button  @click="addStu()">添加学生</button>
-            </div>
-          </form>
-        </div>
           </div>
         </div>
-  </div>
+        <div id="dialog" class="dialog" style="text-align: center;display: none;position: absolute;left: 50%;top: 50%;
+        transform: translate(-50%,-50%);height: 150px">
+          <img @click="dialogNone" style="float: right;width: 30px;height: 30px" src="../static/picture/close.png">
+          <h2><img src="" alt="" class="close" />添加知识点</h2>
+          <div id="loginForm" >
+            <div class="info"></div>
+            <div class="pass"><input type="text" class="text" style="width: 300px" id="KL"/></div>
+            <br>
+            <div class="button"><button class="submit" @click="addKL()">添加知识点</button>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
   </body>
 
 </template>
@@ -158,42 +158,42 @@
 <script>
 import '@/css/style.css'
 import '@/css/swiper-bundle.min.css'
+import '@/css/list.css'
 import '@/css/person.css'
 import '@/css/dialog.css'
 import axios from 'axios'
 
-axios({
-  method: 'POST',    //提交方法
-  url: '/api/IsLoginServlet',    //后端的servlet登录接口
-  data: {
-  },
-}).then(res => {
-  document.getElementById("TeacherName").innerText = res.data;
-})
-
 export default {
   // eslint-disable-next-line vue/multi-word-component-names
-  name: "classDone",
+  name: "tag",
   data() {
     return {
       name: null,
-      map:null,
+      klList:[],
     };
   },
   created() {
     const that = this;
-    console.log(sessionStorage.getItem("className"));
-    let className = sessionStorage.getItem("className");
-    that.name = className;
     axios({
       method: 'POST',    //提交方法
-      url: '/api/SelectStuServlet',    //后端的servlet登录接口
+      url: '/api/IsLoginServlet',    //后端的servlet登录接口
       data: {
-        classname:className
       },
     }).then(res => {
-        that.map= res.data;
+      document.getElementById("TeacherName").innerText = res.data;
+      that.name = res.data;
     })
+
+    setTimeout(()=>{
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/SelectKLServlet',    //后端的servlet登录接口
+        data: {
+        },
+      }).then(res => {
+        //对后端servlet接口返回的数据进行输出
+        that.klList =  res.data;
+      })},50);
   },
   methods: {
     dialogShow: function () {
@@ -202,35 +202,36 @@ export default {
     dialogNone: function () {
       document.getElementById("dialog").style.display = "none";
     },
-    removeStu(id){
+    addKL(){
       axios({
         method: 'POST',    //提交方法
-        url: '/api/DeleteStuServlet',    //后端的servlet登录接口
+        url: '/api/KLAddServlet',    //后端的servlet登录接口
         data: {
-          classname:this.name,
-          id:id,
+          knowledge:document.getElementById("KL").value,
+        }
+      }).then(res => {
+        alert("添加成功！");
+        location.reload();
+      })
+    },
+    removeKL(KL) {
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/DeleteKLServlet',    //后端的servlet登录接口
+        data: {
+          knowledge: KL,
         },
       }).then(res => {
+        alert(res.data);     //对后端servlet接口返回的数据进行输出
+        this.dialogNone();
         location. reload();
       })
     },
-    addStu(){
-      axios({
-        method: 'POST',    //提交方法
-        url: '/api/StudentAddServlet',    //后端的servlet登录接口
-        data: {
-          classname:this.name,
-          studentid:document.getElementById("studentID").value,
-        },
-      }).then(res => {
-        location. reload();
-      })
-    },
-    rightClick(id) {
+    rightClick(KL) {
       // 鼠标右击触发事件
       let del = confirm("您确定要删除吗？")
       if (del){
-        this.removeStu(id);
+        this.removeKL(KL);
       }
     },
   }

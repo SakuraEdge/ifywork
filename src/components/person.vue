@@ -41,21 +41,24 @@
       <div class="navbar">
         <ul class="navbar-items swiper-wrapper">
           <li class="swiper-slide navbar-item"><a href="/home" class="links">
-            <div class="current"></div><i class="icon-arrow-go"></i><i
-              class="icon icon-home-o"></i><span>首页</span>
+            <div class="current"></div><img src="../static/picture/tag/home.png" style="width: 15px;height: 15px;"><span>首页</span>
           </a></li>
           <li class="navbar-hr"></li>
-          <li class="swiper-slide navbar-item" ><a href="/class" title="班级" class="links"><i
-              class="icon-arrow-go"></i><i class="icon-dm"></i><span>班级</span></a></li>
-          <li class="swiper-slide navbar-item" ><a href="/course" title="课程" class="links" @click="goCourse()"><i
-              class="icon-arrow-go"></i><i class="icon-tv"></i><span>课程</span></a></li>
-          <li class="navbar-hr"></li>
-          <li class="swiper-slide navbar-item"><a href="/tag" class="links"><i
-              class="icon-arrow-go"></i><i class="icon icon-ranking-o"></i><span>标签</span></a>
+          <li class="swiper-slide navbar-item"><a href="/class" title="班级" class="links">
+            <img src="../static/picture/tag/class.png" style="width: 15px;height: 15px;"><span>班级</span></a></li>
+          <li class="swiper-slide navbar-item" ><a href="/course" title="课程" class="links" @click="goCourse()">
+            <img src="../static/picture/tag/course.png" style="width: 15px;height: 15px;"><span>课程</span></a></li>
+          <li class="swiper-slide navbar-item"><a href="/tag" class="links">
+            <img src="../static/picture/tag/tag.png" style="width: 15px;height: 15px;">
+            <span>标签</span></a>
           </li>
-          <li class="swiper-slide navbar-item active"><a href="/person"
-                                                  class="links"><i class="icon-arrow-go"></i><i
-              class="icon icon-phone-o"></i><span>个人信息</span></a></li>
+          <li class="swiper-slide navbar-item active"><a href="/other" class="links">
+            <img src="../static/picture/tag/knowlege.png" style="width: 15px;height: 15px;"><span>知识点</span></a>
+          </li>
+          <li class="navbar-hr"></li>
+          <li class="swiper-slide navbar-item"><a href="/person"
+                                                  class="links">
+            <img src="../static/picture/tag/person.png" style="width: 20px;height: 20px;"><span>个人信息</span></a></li>
         </ul>
       </div>
       <div class="side-op">

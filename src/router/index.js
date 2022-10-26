@@ -40,6 +40,11 @@ const routes=[
         path:'/classDone',
         name:'classDone',
         component:()=>import('../components/classDone.vue')
+    },
+    {
+        path:'/other',
+        name:'other',
+        component:()=>import('../components/other.vue')
     }
 ]
 const router = createRouter({
