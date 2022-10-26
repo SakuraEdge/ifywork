@@ -91,7 +91,7 @@
               <a href="/class" class="btn">管理面板</a>
             </div>
           </div>
-          <a class="float-down" href="https://www.natfrp.com/#intro"></a>
+          <a class="float-down" href="#"></a>
         </section>
         <section class="board board-intro" style="--bg: url(https://nyat-static.globalslb.net/natfrp/index/bg2.jpg)">
           <a onclick="document.documentElement.scrollTop=window.innerHeight" id="intro" href="#" class="title-bar">
@@ -105,7 +105,7 @@
           </div>
           <div class="right-pic">
           </div>
-          <a class="float-down" href="https://www.natfrp.com/#price"></a>
+          <a class="float-down" href="#"></a>
         </section>
         <section class="board board-price" style="--bg: url(https://nyat-static.globalslb.net/natfrp/index/bg3.jpg)">
           <a onclick="document.documentElement.scrollTop=window.innerHeight*2" href="#" id="price" class="title-bar">
@@ -120,7 +120,7 @@
           <div class="right-pic">
 
           </div>
-          <a class="float-down" href="https://www.natfrp.com/#price"></a>
+          <a class="float-down" href="#"></a>
 
 
 
