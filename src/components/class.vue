@@ -113,7 +113,7 @@
                 <div class="module-item-cover">
                   <div class="module-item-note">{{i}}</div>
                   <div class="module-item-pic"><img class="lazy lazyload"
-                                                     referrerpolicy="no-referrer" src="../static/picture/backgroud.png"></div>
+                                                     referrerpolicy="no-referrer" src="../static/picture/bg.gif"></div>
                 </div>
                 <div class="module-poster-item-info">
                   <div class="module-poster-item-title">{{i}}</div>

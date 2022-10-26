@@ -101,39 +101,35 @@
             </div>
           </div>
 
-          <div data-v-357a65ed="" class="fav_list_box">
-            <div  class="fav_list_title">
-              <h3 class="fav_list_title_h3">标签</h3>
-              <div class="fav_num">
-                共<span >5</span>条
-              </div>
+          <div class="module">
+            <div class="module-heading"><i class="icon-hot" style="color:#FF0000"></i>
+              <h2 class="module-title">{{name}}</h2>
             </div>
-            <div  class="my_fav_con">
-              <div>
-                <ul  class="my_fav_list">
-                  <li class="my_fav_list_li">
-                    <a  class="my_fav_list_a" href="#" style="color:black;">
-                      <strong>名称</strong>
-                    </a>
-
-                    <label class="my_fav_list_label">
-                      <span  class="my_fav_list_a" style="float: left;color: black"><strong>操作</strong></span>
-                    </label>
-                  </li>
-
-
-                  <li class="my_fav_list_li">
-                    <p  class="my_fav_list_a" >
-                      Java
-                    </p>
-
-                    <label class="my_fav_list_label">
-                      <a  class="cancel_fav" style="float: left">移除<em></em></a>
-                    </label>
-                  </li>
-
-
-                </ul> <!---->
+            <div class="module-main scroll-box">
+              <div class="module-items module-poster-items-small scroll-content">
+                <a
+                    title="" @contextmenu.prevent="rightClick(key)"
+                    class="module-poster-item module-item">
+                  <div class="module-item-cover">
+                    <div class="module-item-note">Java</div>
+                    <div class="module-item-pic"><img class="lazy lazyload"
+                                                      referrerpolicy="no-referrer" src="../static/picture/tag.gif"></div>
+                  </div>
+                  <div class="module-poster-item-info">
+                    <div class="module-poster-item-title">Java</div>
+                  </div>
+                </a>
+                <a href="" title=""
+                   class="module-poster-item module-item">
+                  <div class="module-item-cover">
+                  </div>
+                  <div class="module-poster-item-info">
+                  </div>
+                </a><a href="" title=""
+                       class="module-poster-item module-item">
+                <div class="module-item-cover">
+                </div>
+              </a></div>
               </div>
             </div>
           </div>
@@ -146,13 +142,12 @@
             <div class="info"></div>
             <div class="pass"><input type="text" class="text" style="width: 300px"/></div>
             <br>
-            <div class="button"><button class="submit" value="">添加课程</button>
+            <div class="button"><button class="submit" value="">添加标签</button>
             </div>
           </form>
         </div>
       </div>
     </div>
-  </div>
   </body>
 
 </template>

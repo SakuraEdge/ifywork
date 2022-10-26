@@ -123,7 +123,7 @@
                                        style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-label-font-size:14px; --n-label-font-weight:400; --n-label-text-color:rgb(118, 124, 130); --n-value-font-weight:400; --n-value-font-size:24px; --n-value-prefix-text-color:rgb(51, 54, 57); --n-value-suffix-text-color:rgb(51, 54, 57); --n-value-text-color:rgb(51, 54, 57);">
                                     <div class="n-statistic__label">UID</div>
                                     <div class="n-statistic-value">
-                                      <!----><span class="n-statistic-value__content">323468</span>
+                                      <!----><span class="n-statistic-value__content">{{personNum}}</span>
                                       <!---->
                                     </div>
                                   </div>
@@ -387,7 +387,7 @@
                             </tr>
                             <tr data-v-95e7e64a="">
                               <td data-v-95e7e64a="">注册时间</td>
-                              <td data-v-95e7e64a="">2021-07-04</td>
+                              <td data-v-95e7e64a="">{{createdTime}}</td>
                             </tr>
                             <tr data-v-95e7e64a="">
                               <td data-v-95e7e64a="">账户等级</td>
@@ -438,7 +438,9 @@ export default {
   name: "person",
   data() {
     return {
-      personName: null
+      personName: null,
+      personNum:null,
+      createdTime:null,
     }
   },
   created() {
@@ -452,6 +454,18 @@ export default {
       document.getElementById("TeacherName").innerText = res.data;
       that.personName = res.data;
     })
+
+    setTimeout(()=> {
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/InfoServlet',    //后端的servlet登录接口
+        data: {
+          name: that.personName
+        },
+      }).then(res => {
+        that.personNum = res.data['num'];
+        that.createdTime = res.data['createTime'];
+      })},50);
   },
   methods:{
     signIn:function (){

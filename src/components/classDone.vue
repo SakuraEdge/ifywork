@@ -47,7 +47,7 @@
           <li class="navbar-hr"></li>
           <li class="swiper-slide navbar-item active" ><a href="/class" title="班级" class="links"><i
               class="icon-arrow-go"></i><i class="icon-dm"></i><span>班级</span></a></li>
-          <li class="swiper-slide navbar-item" ><a href="/course" title="课程" class="links" @click="goCourse()"><i
+          <li class="swiper-slide navbar-item" ><a href="/course" title="课程" class="links"><i
               class="icon-arrow-go"></i><i class="icon-tv"></i><span>课程</span></a></li>
           <li class="navbar-hr"></li>
           <li class="swiper-slide navbar-item"><a href="/tag" class="links"><i
@@ -101,42 +101,35 @@
             </div>
           </div>
 
-        <div data-v-357a65ed="" class="fav_list_box">
-          <div  class="fav_list_title">
-            <h3 class="fav_list_title_h3">{{name}}</h3>
-            <div class="fav_num">
-              共<span >5</span>条
+          <div class="module">
+            <div class="module-heading"><i class="icon-hot" style="color:#FF0000"></i>
+              <h2 class="module-title">{{name}}</h2>
             </div>
-          </div>
-          <div  class="my_fav_con">
-            <div>
-              <ul  class="my_fav_list">
-                <li class="my_fav_list_li">
-                  <a  class="my_fav_list_a" href="#" style="color:black;">
-                    <strong>姓名</strong>  <span style="margin-left: 300px"><strong>学号</strong></span>
-                  </a>
-
-                  <label class="my_fav_list_label">
-                    <span  class="my_fav_list_a" style="float: left;color: black"><strong>操作</strong></span>
-                  </label>
-                </li>
-
-
-                <li class="my_fav_list_li" v-for="(value,key) in map" v-bind:key="key">
-                  <p  class="my_fav_list_a" >
-                    {{key}}<span style="margin-left: 300px">{{value}}</span>
-                  </p>
-
-                  <label class="my_fav_list_label">
-                    <a  class="cancel_fav" style="float: left" @click="removeStu(value)">移除<em></em></a>
-                  </label>
-                </li>
-
-
-              </ul> <!---->
-            </div>
-          </div>
-        </div>
+            <div class="module-main scroll-box">
+              <div class="module-items module-poster-items-small scroll-content">
+                <a v-for="(key,value) in map" v-bind:key="key"
+                    title="" @contextmenu.prevent="rightClick(key)"
+                   class="module-poster-item module-item">
+                  <div class="module-item-cover">
+                    <div class="module-item-note">学号：{{key}}</div>
+                    <div class="module-item-pic"><img class="lazy lazyload"
+                                                      referrerpolicy="no-referrer" src="../static/picture/classPerson.gif"></div>
+                  </div>
+                  <div class="module-poster-item-info">
+                    <div class="module-poster-item-title">{{value}}</div>
+                  </div>
+                </a>
+                <a href="" title=""
+                   class="module-poster-item module-item">
+                  <div class="module-item-cover">
+                  </div>
+                  <div class="module-poster-item-info">
+                  </div>
+                </a><a href="" title=""
+                       class="module-poster-item module-item">
+                <div class="module-item-cover">
+                </div>
+              </a></div>
       </div>
         <div id="dialog" class="dialog" style="text-align: center;display: none;position: absolute;left: 50%;top: 50%;
         transform: translate(-50%,-50%);height: 150px">
@@ -153,6 +146,8 @@
           </div>
         </div>
   </div>
+      </div>
+    </div>
   </body>
 
 </template>
@@ -160,7 +155,6 @@
 <script>
 import '@/css/style.css'
 import '@/css/swiper-bundle.min.css'
-import '@/css/list.css'
 import '@/css/person.css'
 import '@/css/dialog.css'
 import axios from 'axios'
@@ -228,6 +222,13 @@ export default {
       }).then(res => {
         location. reload();
       })
+    },
+    rightClick(id) {
+      // 鼠标右击触发事件
+      let del = confirm("您确定要删除吗？")
+      if (del){
+        this.removeStu(id);
+      }
     },
   }
 }
