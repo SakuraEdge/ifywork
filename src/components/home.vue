@@ -82,40 +82,9 @@
     </div>
     <div class="main">
       <div class="content">
-        <div class="banner">
-          <ul id = 'myView'>
-            <li>
-              <a href="#" >
-                <img src="../static/picture/view1.png">
-              </a>
-            </li>
-            <li>
-              <a href="#" >
-                <img src="../static/picture/view1.png">
-              </a>
-            </li>
-            <li>
-              <a href="#" >
-                <img src="../static/picture/view1.png">
-              </a>
-            </li>
-            <li>
-              <a href="#" >
-                <img src="../static/picture/view1.png">
-              </a>
-            </li>
-            <li>
-              <a href="#" >
-                <img src="../static/picture/view1.png">
-              </a>
-            </li>
-          </ul>
-          <ol>
-
-          </ol>
-          <a href="#" class="left">&lt;</a>
-          <a href="#" class="right">&gt;</a>
-        </div>
+        <video
+               src=""
+               ></video>
       </div>
         </div>
       </div>

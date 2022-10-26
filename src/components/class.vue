@@ -114,7 +114,7 @@
                   @click="classDone(i)" title="" @contextmenu.prevent="rightClick(i)"
                   class="module-poster-item module-item">
                 <div class="module-item-cover">
-                  <div class="module-item-note">{{i}}</div>
+                  <div class="module-item-note">主讲：{{name}}</div>
                   <div class="module-item-pic"><img class="lazy lazyload"
                                                      referrerpolicy="no-referrer" src="../static/picture/bg.gif"></div>
                 </div>

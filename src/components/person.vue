@@ -52,11 +52,11 @@
             <img src="../static/picture/tag/tag.png" style="width: 15px;height: 15px;">
             <span>标签</span></a>
           </li>
-          <li class="swiper-slide navbar-item active"><a href="/other" class="links">
+          <li class="swiper-slide navbar-item"><a href="/other" class="links">
             <img src="../static/picture/tag/knowlege.png" style="width: 15px;height: 15px;"><span>知识点</span></a>
           </li>
           <li class="navbar-hr"></li>
-          <li class="swiper-slide navbar-item"><a href="/person"
+          <li class="swiper-slide navbar-item active"><a href="/person"
                                                   class="links">
             <img src="../static/picture/tag/person.png" style="width: 20px;height: 20px;"><span>个人信息</span></a></li>
         </ul>
