@@ -207,7 +207,7 @@
                                style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-count-text-color:rgb(118, 124, 130); --n-count-text-color-disabled:rgba(194, 194, 194, 1); --n-color:rgba(255, 255, 255, 1); --n-font-size:14px; --n-border-radius:3px; --n-height:34px; --n-padding-left:12px; --n-padding-right:12px; --n-text-color:rgb(51, 54, 57); --n-caret-color:#18a058; --n-text-decoration-color:rgb(51, 54, 57); --n-border:1px solid rgb(224, 224, 230); --n-border-disabled:1px solid rgb(224, 224, 230); --n-border-hover:1px solid #36ad6a; --n-border-focus:1px solid #36ad6a; --n-placeholder-color:rgba(194, 194, 194, 1); --n-placeholder-color-disabled:rgba(209, 209, 209, 1); --n-icon-size:16px; --n-line-height-textarea:1.6; --n-color-disabled:rgb(250, 250, 252); --n-color-focus:rgba(255, 255, 255, 1); --n-text-color-disabled:rgba(194, 194, 194, 1); --n-box-shadow-focus:0 0 0 2px rgba(24, 160, 88, 0.2); --n-loading-color:#18a058; --n-caret-color-warning:#f0a020; --n-color-focus-warning:rgba(255, 255, 255, 1); --n-box-shadow-focus-warning:0 0 0 2px rgba(240, 160, 32, 0.2); --n-border-warning:1px solid #f0a020; --n-border-focus-warning:1px solid #fcb040; --n-border-hover-warning:1px solid #fcb040; --n-loading-color-warning:#f0a020; --n-caret-color-error:#d03050; --n-color-focus-error:rgba(255, 255, 255, 1); --n-box-shadow-focus-error:0 0 0 2px rgba(208, 48, 80, 0.2); --n-border-error:1px solid #d03050; --n-border-focus-error:1px solid #de576d; --n-border-hover-error:1px solid #de576d; --n-loading-color-error:#d03050; --n-clear-color:rgba(194, 194, 194, 1); --n-clear-size:16px; --n-clear-color-hover:rgba(146, 146, 146, 1); --n-clear-color-pressed:rgba(175, 175, 175, 1); --n-icon-color:rgba(194, 194, 194, 1); --n-icon-color-hover:rgba(146, 146, 146, 1); --n-icon-color-pressed:rgba(175, 175, 175, 1); --n-icon-color-disabled:rgba(209, 209, 209, 1); --n-suffix-text-color:rgb(51, 54, 57);">
                             <div class="n-input-wrapper">
                               <!---->
-                              <div class="n-input__input"><input type="text" class="n-input__input-el"
+                              <div class="n-input__input"><input id="msg" type="text" class="n-input__input-el"
                                                                  placeholder="" size="20">
                                 <div class="n-input__placeholder"><span></span></div>
                                 <!---->
@@ -264,7 +264,7 @@
                            style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-border-radius:3px; --n-color:#fff; --n-color-modal:#fff; --n-color-popover:#fff; --n-color-embedded:rgb(250, 250, 252); --n-color-embedded-modal:rgb(250, 250, 252); --n-color-embedded-popover:rgb(250, 250, 252); --n-color-target:#18a058; --n-text-color:rgb(51, 54, 57); --n-line-height:1.6; --n-action-color:rgb(250, 250, 252); --n-title-text-color:rgb(31, 34, 37); --n-title-font-weight:500; --n-close-icon-color:rgba(102, 102, 102, 1); --n-close-icon-color-hover:rgba(102, 102, 102, 1); --n-close-icon-color-pressed:rgba(102, 102, 102, 1); --n-close-color-hover:rgba(0, 0, 0, 0.09); --n-close-color-pressed:rgba(0, 0, 0, 0.13); --n-border-color:rgb(239, 239, 245); --n-box-shadow:0 1px 2px -2px rgba(0, 0, 0, 0.08), 0 3px 6px 0 rgba(0, 0, 0, 0.06), 0 5px 12px 4px rgba(0, 0, 0, 0.04); --n-padding-top:19px; --n-padding-bottom:20px; --n-padding-left:24px; --n-font-size:14px; --n-title-font-size:18px; --n-close-size:22px; --n-close-icon-size:18px; --n-close-border-radius:3px;">
                         <!---->
                         <div class="n-card-header">
-                          <div class="n-card-header__main" role="heading">历史签到</div>
+                          <div class="n-card-header__main" role="heading">最近签到</div>
 
                           <!---->
                         </div>
@@ -274,83 +274,29 @@
                                  style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-td-color:#fff; --n-td-color-modal:#fff; --n-td-color-popover:#fff; --n-td-text-color:rgb(51, 54, 57); --n-border-color:rgba(239, 239, 245, 1); --n-border-color-modal:rgba(239, 239, 245, 1); --n-border-color-popover:rgba(239, 239, 245, 1); --n-border-radius:3px; --n-font-size:14px; --n-th-color:rgba(250, 250, 252, 1); --n-th-color-modal:rgba(250, 250, 252, 1); --n-th-color-popover:rgba(250, 250, 252, 1); --n-th-font-weight:500; --n-th-text-color:rgb(31, 34, 37); --n-line-height:1.6; --n-td-padding:12px; --n-th-padding:12px; --n-td-color-striped:rgba(250, 250, 252, 1); --n-td-color-striped-modal:rgba(250, 250, 252, 1); --n-td-color-striped-popover:rgba(250, 250, 252, 1); white-space: nowrap;">
                             <thead>
                             <tr>
-                              <th>类型</th>
-                              <th>签到分数</th>
+                              <th>签到人</th>
+                              <th>签到内容</th>
                               <th>签到时间</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            <tr v-for="i in getSignIn" v-bind:key="i">
                               <td>
                                 <!---->
-                                <div style="display: flex; align-items: center;"><span>今天也是好心情</span> &nbsp;
+                                <div style="display: flex; align-items: center;"><span>{{i[0]}}</span> &nbsp;
                                   <!---->
                                 </div>
                                 <!---->
                               </td>
-                              <td style="width: 99%; padding-top: 7px;">
+                              <td>
                                 <!---->
                                 <div>
-                                  <div style="font-size: 12px; margin-bottom: 2px;">100分</div>
-                                  <div class="n-progress n-progress--line n-progress--info" aria-valuemax="100"
-                                       aria-valuemin="0" aria-valuenow="179.6" role="progressbar"
-                                       style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-fill-color:#2080f0; --n-font-size:14px; --n-font-size-circle:28px; --n-font-weight-circle:400; --n-icon-color:#2080f0; --n-icon-size-circle:36px; --n-icon-size-line:18px; --n-line-bg-processing:linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.5) 100%); --n-rail-color:rgba(235, 235, 235, 1); --n-rail-height:8px; --n-text-color-circle:rgb(51, 54, 57); --n-text-color-line-inner:rgb(255, 255, 255); --n-text-color-line-outer:rgb(51, 54, 57); flex: 1 1 0%;">
-                                    <div class="n-progress-content" role="none">
-                                      <div class="n-progress-graph" aria-hidden="true">
-                                        <div
-                                            class="n-progress-graph-line n-progress-graph-line--indicator-inside">
-                                          <div class="n-progress-graph-line-rail">
-                                            <div class="n-progress-graph-line-fill" style="max-width: 179.6%;">
-                                              <div class="n-progress-graph-line-indicator">100%</div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <!---->
-                                    </div>
-                                  </div>
+                                  <div style="display: flex; align-items: center;">{{i[1]}}</div>
                                 </div>
                                 <!---->
                               </td>
                               <td>
-                                <!----><span>2022-10-01</span>
-                                <!---->
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <!---->
-                                <div style="display: flex; align-items: center;"><span>疯狂星期四</span> &nbsp;
-                                  <!---->
-                                </div>
-                                <!---->
-                              </td>
-                              <td style="width: 99%; padding-top: 7px;">
-                                <!---->
-                                <div>
-                                  <div style="font-size: 12px; margin-bottom: 2px;">100分</div>
-                                  <div class="n-progress n-progress--line n-progress--info" aria-valuemax="100"
-                                       aria-valuemin="0" aria-valuenow="100" role="progressbar"
-                                       style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-fill-color:#2080f0; --n-font-size:14px; --n-font-size-circle:28px; --n-font-weight-circle:400; --n-icon-color:#2080f0; --n-icon-size-circle:36px; --n-icon-size-line:18px; --n-line-bg-processing:linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.5) 100%); --n-rail-color:rgba(235, 235, 235, 1); --n-rail-height:8px; --n-text-color-circle:rgb(51, 54, 57); --n-text-color-line-inner:rgb(255, 255, 255); --n-text-color-line-outer:rgb(51, 54, 57); flex: 1 1 0%;">
-                                    <div class="n-progress-content" role="none">
-                                      <div class="n-progress-graph" aria-hidden="true">
-                                        <div
-                                            class="n-progress-graph-line n-progress-graph-line--indicator-inside">
-                                          <div class="n-progress-graph-line-rail">
-                                            <div class="n-progress-graph-line-fill" style="max-width: 100%;">
-                                              <div class="n-progress-graph-line-indicator">100%</div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <!---->
-                                    </div>
-                                  </div>
-                                </div>
-                                <!---->
-                              </td>
-                              <td>
-                                <!----><span>2022-10-01</span>
+                                <!----><span>{{i[2]}}</span>
                                 <!---->
                               </td>
                             </tr>
@@ -456,6 +402,7 @@ export default {
   name: "person",
   data() {
     return {
+      getSignIn: null,
       personName: null,
       personNum:null,
       createdTime:null,
@@ -473,6 +420,15 @@ export default {
       that.personName = res.data;
     })
 
+    axios({
+      method: 'POST',    //提交方法
+      url: '/api/GetSignIn',    //后端的servlet登录接口
+      data: {
+      },
+    }).then(res => {
+      that.getSignIn = res.data;
+    })
+
     setTimeout(()=> {
       axios({
         method: 'POST',    //提交方法
@@ -484,10 +440,26 @@ export default {
         that.personNum = res.data['Number'];
         that.createdTime = res.data['createTime'];
       })},100);
+
+    setTimeout(()=> {
+      },100);
+
   },
   methods:{
     signIn:function (){
-      alert("签到成功！");
+      const that = this;
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/SignIn',    //后端的servlet登录接口
+        data: {
+          name: that.personName,
+          msg: document.getElementById("msg").value
+        },
+      }).then(res => {
+        alert(res.data);
+        location.reload();
+      })
+
     },
     dialogShow: function () {
       document.getElementById("dialog").style.display = "block";
