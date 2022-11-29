@@ -182,7 +182,7 @@ export default {
 
     axios({
       method: 'POST',    //提交方法
-      url: '/api/IsLoginServlet',    //后端的servlet登录接口
+      url: '/api/IsLogin',    //后端的servlet登录接口
       data: {
       },
     }).then(res => {
@@ -193,14 +193,14 @@ export default {
     setTimeout(()=>{
       axios({
         method: 'POST',    //提交方法
-        url: '/api/SelectClassServlet',    //后端的servlet登录接口
+        url: '/api/SelectMyClass',    //后端的servlet登录接口
         data: {
           teacherID: that.name
         },
       }).then(res => {
         //对后端servlet接口返回的数据进行输出
         that.dataList = res.data
-      })},50);
+      })},100);
   },
 
   methods:{
@@ -220,7 +220,7 @@ export default {
     createClass() {
       axios({
         method: 'POST',    //提交方法
-        url: '/api/CreateServlet',    //后端的servlet登录接口
+        url: '/api//CreateClass',    //后端的servlet登录接口
         data: {
           name: document.getElementById("classname").value,
           num: document.getElementById("maxnum").value,
@@ -235,7 +235,7 @@ export default {
     removeClass(className) {
       axios({
         method: 'POST',    //提交方法
-        url: '/api/DeleteClassServlet',    //后端的servlet登录接口
+        url: '/api/DeleteClass',    //后端的servlet登录接口
         data: {
           classname: className,
         },

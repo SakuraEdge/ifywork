@@ -165,7 +165,7 @@
 
                                   <!---->
                                 </div>
-                                <div role="none" style="max-width: 100%;"><a
+                                <div role="none" style="max-width: 100%;"><a @click="dialogShow"
                                     class="n-button n-button--default-type n-button--medium-type" tabindex="0"
                                     type="button" disabled="false" href="#" data-v-95e7e64a=""
                                     style="--n-bezier:cubic-bezier(0.4, 0, 0.2, 1); --n-bezier-ease-out:cubic-bezier(0, 0, 0.2, 1); --n-ripple-duration:0.6s; --n-opacity-disabled:0.5; --n-wave-opacity:0.6; font-weight: 400; --n-color:#0000; --n-color-hover:#0000; --n-color-pressed:#0000; --n-color-focus:#0000; --n-color-disabled:#0000; --n-ripple-color:#18a058; --n-text-color:rgb(51, 54, 57); --n-text-color-hover:#36ad6a; --n-text-color-pressed:#0c7a43; --n-text-color-focus:#36ad6a; --n-text-color-disabled:rgb(51, 54, 57); --n-border:1px solid rgb(224, 224, 230); --n-border-hover:1px solid #36ad6a; --n-border-pressed:1px solid #0c7a43; --n-border-focus:1px solid #36ad6a; --n-border-disabled:1px solid rgb(224, 224, 230); --n-width: initial; --n-height:34px; --n-font-size:14px; --n-padding:0 14px; --n-icon-size:18px; --n-icon-margin:6px; --n-border-radius:3px;">
@@ -422,6 +422,20 @@
     </div>
     <!---->
     <!---->
+      <div id="dialog" class="dialog" style="text-align: center;display: none;position: absolute;left: 50%;top: 50%;
+        transform: translate(-50%,-50%);height: 200px">
+        <img @click="dialogNone" style="float: right;width: 30px;height: 30px" src="../static/picture/close.png">
+        <h2><img src="" alt="" class="close" />修改密码</h2>
+        <div id="loginForm" >
+          <div class="info"></div>
+          <div class="pass">旧密码：<input type="text" class="text" id="oldPassword"/></div>
+          <br>
+          <div class="pass">新密码：<input type="text" class="text" id="newPassword"/></div>
+          <br>
+          <div class="button"><button class="submit" @click="renewPassword()">确认修改</button>
+          </div>
+        </div>
+      </div>
   </div>
   </div>
   </body>
@@ -432,6 +446,7 @@
 import '@/css/style.css'
 import '@/css/swiper-bundle.min.css'
 import '@/css/person.css'
+import '@/css/dialog.css'
 import axios from 'axios'
 
 
@@ -450,7 +465,7 @@ export default {
     const that = this;
     axios({
       method: 'POST',    //提交方法
-      url: '/api/IsLoginServlet',    //后端的servlet登录接口
+      url: '/api/IsLogin',    //后端的servlet登录接口
       data: {
       },
     }).then(res => {
@@ -461,18 +476,38 @@ export default {
     setTimeout(()=> {
       axios({
         method: 'POST',    //提交方法
-        url: '/api/InfoServlet',    //后端的servlet登录接口
+        url: '/api/Info',    //后端的servlet登录接口
         data: {
           name: that.personName
         },
       }).then(res => {
-        that.personNum = res.data['num'];
+        that.personNum = res.data['Number'];
         that.createdTime = res.data['createTime'];
-      })},50);
+      })},100);
   },
   methods:{
     signIn:function (){
       alert("签到成功！");
+    },
+    dialogShow: function () {
+      document.getElementById("dialog").style.display = "block";
+    },
+    dialogNone: function () {
+      document.getElementById("dialog").style.display = "none";
+    },
+    renewPassword(){
+      axios({
+        method: 'POST',    //提交方法
+        url: '/api/ResetPwd',    //后端的servlet登录接口
+        data: {
+          id:this.personNum,
+          old_pwd:document.getElementById("oldPassword").value,
+          new_pwd:document.getElementById("newPassword").value,
+        }
+      }).then(res => {
+        alert(res.data);
+        location.reload();
+      })
     }
   }
 }

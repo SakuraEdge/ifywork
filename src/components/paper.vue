@@ -99,7 +99,7 @@
                                                 d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67l-.5-.68C10.96 2.54 10.05 2 9 2C7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1s-1-.45-1-1s.45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83L8.62 12L11 8.76l1-1.36l1 1.36L15.38 12L17 10.83L14.92 8H20v6z"
                                                 fill="currentColor"></path>
                                           </svg></i></div>
-                                    </span><span class="n-button__content"> 添加知识点 </span>
+                                    </span><span class="n-button__content"> 添加试题 </span>
             </button>
             </div>
           </div>
@@ -237,7 +237,7 @@ export default {
     const that = this;
     axios({
       method: 'POST',    //提交方法
-      url: '/api/IsLoginServlet',    //后端的servlet登录接口
+      url: '/api/IsLogin',    //后端的servlet登录接口
       data: {
       },
     }).then(res => {
@@ -250,7 +250,7 @@ export default {
     that.KLName = KL;
     axios({
       method: 'POST',    //提交方法
-      url: '/api/SelectPaperNameServlet',    //后端的servlet登录接口
+      url: '/api/SelectPaperName',    //后端的servlet登录接口
       data: {
         knowledge:KL
       },
@@ -274,7 +274,7 @@ export default {
     addPaper(){
       axios({
         method: 'POST',    //提交方法
-        url: '/api/PaperAddServlet',    //后端的servlet登录接口
+        url: '/api/AddPaper',    //后端的servlet登录接口
         data: {
           name:document.getElementById("page").value,
           a:document.getElementById("a").value,
@@ -293,7 +293,7 @@ export default {
       this.dialogPaperShow();
       axios({
         method: 'POST',    //提交方法
-        url: '/api/SelectPaperServlet',    //后端的servlet登录接口
+        url: '/api/SelectPaper',    //后端的servlet登录接口
         data: {
           papername:paperName
         },
@@ -305,7 +305,7 @@ export default {
     removePaper(paperName) {
       axios({
         method: 'POST',    //提交方法
-        url: '/api/DeletePaperServlet',    //后端的servlet登录接口
+        url: '/api/DeletePaper',    //后端的servlet登录接口
         data: {
           paper: paperName,
         },

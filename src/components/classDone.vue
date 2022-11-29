@@ -164,7 +164,7 @@ import axios from 'axios'
 
 axios({
   method: 'POST',    //提交方法
-  url: '/api/IsLoginServlet',    //后端的servlet登录接口
+  url: '/api/IsLogin',    //后端的servlet登录接口
   data: {
   },
 }).then(res => {
@@ -182,12 +182,11 @@ export default {
   },
   created() {
     const that = this;
-    console.log(sessionStorage.getItem("className"));
     let className = sessionStorage.getItem("className");
     that.name = className;
     axios({
       method: 'POST',    //提交方法
-      url: '/api/SelectStuServlet',    //后端的servlet登录接口
+      url: '/api/SelectStudent',    //后端的servlet登录接口
       data: {
         classname:className
       },
@@ -205,7 +204,7 @@ export default {
     removeStu(id){
       axios({
         method: 'POST',    //提交方法
-        url: '/api/DeleteStuServlet',    //后端的servlet登录接口
+        url: '/api/DeleteStudent',    //后端的servlet登录接口
         data: {
           classname:this.name,
           id:id,
@@ -217,7 +216,7 @@ export default {
     addStu(){
       axios({
         method: 'POST',    //提交方法
-        url: '/api/StudentAddServlet',    //后端的servlet登录接口
+        url: '/api/StudentAdd',    //后端的servlet登录接口
         data: {
           classname:this.name,
           studentid:document.getElementById("studentID").value,

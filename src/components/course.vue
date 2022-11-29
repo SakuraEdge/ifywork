@@ -177,7 +177,7 @@ export default {
     const that = this;
     axios({
       method: 'POST',    //提交方法
-      url: '/api/IsLoginServlet',    //后端的servlet登录接口
+      url: '/api/IsLogin',    //后端的servlet登录接口
       data: {
       },
     }).then(res => {
@@ -188,13 +188,13 @@ export default {
     setTimeout(()=>{
       axios({
         method: 'POST',    //提交方法
-        url: '/api/SelectCourseServlet',    //后端的servlet登录接口
+        url: '/api/SelectCourse',    //后端的servlet登录接口
         data: {
           teacherName:that.name
         },
       }).then(res => {
         that.map = res.data;
-      })},50);
+      })},100);
   },
   methods: {
     dialogShow: function () {
@@ -206,7 +206,7 @@ export default {
     addCourse(){
       axios({
         method: 'POST',    //提交方法
-        url: '/api/CourseAddServlet',    //后端的servlet登录接口
+        url: '/api/AddCourse',    //后端的servlet登录接口
         data: {
           teachername:this.name,
           coursename:document.getElementById("courseName").value,
@@ -220,7 +220,7 @@ export default {
     removeCourse(courseName) {
       axios({
         method: 'POST',    //提交方法
-        url: '/api/DeleteCourseServlet',    //后端的servlet登录接口
+        url: '/api/DeleteCourse',    //后端的servlet登录接口
         data: {
           coursename: courseName,
         },

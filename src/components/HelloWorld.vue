@@ -82,7 +82,7 @@ export default {
       function setName() {
         axios({
           method: 'POST',    //提交方法
-          url: '/api/SetNameServlet',    //后端的servlet登录接口
+          url: '/api/SetName',    //后端的servlet登录接口
           data: {
             userName: document.getElementById("login_id").value,    //传输的用户名
           },
@@ -93,7 +93,7 @@ export default {
 
       axios({
         method: 'POST',    //提交方法
-        url: '/api/LoginServlet',    //后端的servlet登录接口
+        url: '/api/Login',    //后端的servlet登录接口
         data: {
           userName: document.getElementById("login_id").value,    //传输的用户名
           password: document.getElementById("login_pwd").value,    //传输的密码
@@ -111,7 +111,7 @@ export default {
     reg() {
       axios({
         method: 'POST',    //提交方法
-        url: '/api/RegServlet',    //后端的servlet登录接口
+        url: '/api/Register',    //后端的servlet登录接口
         data: {
           userName: document.getElementById("reg_user").value,    //传输的用户名
           tel: document.getElementById("reg_tel").value,

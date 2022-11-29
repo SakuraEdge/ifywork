@@ -177,7 +177,7 @@ export default {
 
     axios({
       method: 'POST',    //提交方法
-      url: '/api/IsLoginServlet',    //后端的servlet登录接口
+      url: '/api/IsLogin',    //后端的servlet登录接口
       data: {
       },
     }).then(res => {

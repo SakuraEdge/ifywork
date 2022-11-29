@@ -176,7 +176,7 @@ export default {
     const that = this;
     axios({
       method: 'POST',    //提交方法
-      url: '/api/IsLoginServlet',    //后端的servlet登录接口
+      url: '/api/IsLogin',    //后端的servlet登录接口
       data: {
       },
     }).then(res => {
@@ -187,7 +187,7 @@ export default {
     setTimeout(()=>{
       axios({
         method: 'POST',    //提交方法
-        url: '/api/SelectKLServlet',    //后端的servlet登录接口
+        url: '/api/SelectKL',    //后端的servlet登录接口
         data: {
         },
       }).then(res => {
@@ -205,7 +205,7 @@ export default {
     addKL(){
       axios({
         method: 'POST',    //提交方法
-        url: '/api/KLAddServlet',    //后端的servlet登录接口
+        url: '/api/AddKL',    //后端的servlet登录接口
         data: {
           knowledge:document.getElementById("KL").value,
         }
@@ -217,7 +217,7 @@ export default {
     removeKL(KL) {
       axios({
         method: 'POST',    //提交方法
-        url: '/api/DeleteKLServlet',    //后端的servlet登录接口
+        url: '/api/DeleteKL',    //后端的servlet登录接口
         data: {
           knowledge: KL,
         },

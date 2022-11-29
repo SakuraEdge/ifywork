@@ -139,8 +139,8 @@
             <span id="comname">安徽信息工程学院 </span> · 产业学院
 
             <div style="margin-top: 40px" class="actions">
-              <a href="#" class="btn">QQ</a>
-              <a href="#" id="joinusbtn" class="btn">微信</a>
+              <a href="#" class="btn">QQ邮箱</a>
+              <a href="#" id="joinusbtn" class="btn">返回顶部</a>
             </div>
           </div>
         </section>
@@ -161,7 +161,7 @@ import axios from 'axios'
 
 axios({
   method: 'POST',    //提交方法
-  url: '/api/IsLoginServlet',    //后端的servlet登录接口
+  url: '/api/IsLogin',    //后端的servlet登录接口
   data: {
   },
 }).then(res => {
