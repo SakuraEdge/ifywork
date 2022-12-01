@@ -299,6 +299,7 @@ export default {
         },
       }).then(res => {
         this.paperMap = res.data;
+        alert(res.data);
         this.paper = this.paperMap[1].split('|')
       })
     },

@@ -152,7 +152,7 @@ export default {
           password: document.getElementById("reg_pwd").value,    //传输的密码
         },
       }).then(res => {
-        alert("注册成功！你的唯一ID为:"+res.data+"\n请注意保存！");     //对后端servlet接口返回的数据进行输出
+        alert(res.data);     //对后端servlet接口返回的数据进行输出
       })
     },
     dj(){

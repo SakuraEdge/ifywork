@@ -374,9 +374,9 @@
         <h2><img src="" alt="" class="close" />修改密码</h2>
         <div id="loginForm" >
           <div class="info"></div>
-          <div class="pass">旧密码：<input type="text" class="text" id="oldPassword"/></div>
+          <div class="pass">旧密码：<input type="password" class="text" id="oldPassword"/></div>
           <br>
-          <div class="pass">新密码：<input type="text" class="text" id="newPassword"/></div>
+          <div class="pass">新密码：<input type="password" class="text" id="newPassword"/></div>
           <br>
           <div class="button"><button class="submit" @click="renewPassword()">确认修改</button>
           </div>
@@ -478,7 +478,6 @@ export default {
         }
       }).then(res => {
         alert(res.data);
-        location.reload();
       })
     }
   }

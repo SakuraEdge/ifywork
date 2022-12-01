@@ -106,7 +106,7 @@
 
           <div class="module">
             <div class="module-heading"><i class="icon-hot" style="color:#FF0000"></i>
-              <h2 class="module-title">{{name}}</h2>
+              <h2 class="module-title">{{name}}（班级学生信息）</h2>
             </div>
             <div class="module-main scroll-box">
               <div class="module-items module-poster-items-small scroll-content">
