@@ -133,7 +133,7 @@
 
           <div class="bg" id="about-bg"></div>
           <div class="left-text">
-            <div class="middletext">GWORK 由 <br id="mobile-br">周毅与谢利杰共同开发</div>
+            <div class="middletext">GWORK 由 <br id="mobile-br">周毅，谢利杰与王阳共同开发</div>
             <br>
             <br>
             <span id="comname">安徽信息工程学院 </span> · 产业学院
